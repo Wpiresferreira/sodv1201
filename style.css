@@ -1,0 +1,149 @@
+* {
+    background-color: #25274D;
+    color: #2E9CCA;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#aboutMe {
+    width: 60vw;
+    text-align: left;
+}
+
+#left_side {
+    display: flex;
+    width: 30vw;
+    height: 100px;
+    align-content: center;
+    justify-content: space-evenly;
+
+}
+
+#right_side {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    height: 100px;
+    align-content: space-evenly;
+    justify-content: flex-start;
+}
+
+#letter {
+    font-size: 72px;
+}
+
+#mark-input-box {
+    font-size: larger;
+    width: 60px;
+    background-color: #2E9CCA;
+    color: #414470;
+}
+
+a {
+    text-decoration: none;
+    background-color: #414470;
+
+}
+
+header a:hover {
+    background: rgb(163, 163, 163);
+    text-decoration: underline;
+}
+
+#header {
+    display: flex;
+    padding: 15px 50px;
+    max-height: 80px;
+    min-width: 280px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(57, 131, 120);
+
+}
+
+#menu {
+    display: flex;
+    height: 70px;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #414470;
+
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#btn-menu {
+    display: none;
+    border: none;
+    font-size: larger;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    text-align: left;
+    padding: 8px;
+    /* border-color: #2E9CCA; */
+}
+
+th {
+    padding: 8px;
+}
+
+#salary {
+    text-align: right;
+}
+
+.odd {
+    background-color: #2E9CCA;
+    color: #25274D;
+}
+
+.odd:hover {
+    background-color: #25274D;
+    color: #2E9CCA;
+}
+.even:hover {
+    background-color: #2E9CCA;
+    color: #25274D;
+}
+
+.even {
+    background-color: #25274D;
+    color: #2E9CCA;
+}
+
+#image-container {
+    display: inline-flex;
+    width: 20vw;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

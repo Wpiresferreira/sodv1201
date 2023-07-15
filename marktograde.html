@@ -1,0 +1,63 @@
+<!-- single and multiple line comment ->
+    
+    
+    <!DOCTYPE html>
+<!-- //*
+ *@name: Assignment1
+ *@Course Code: SODV1201
+ *@Class 
+ *
+ *// -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Mark to Grade</title>
+</head>
+
+<body>
+    <header>
+        <h1>Wagner Pires Ferreira Profile</h1>
+        <nav id="nav">
+            <ul id="menu">
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marktograde.html">
+                        Mark to Grade
+                    </a>
+                </li>
+                <li>
+                    <a href="liststaff.html">
+                        List Staff
+                    </a>
+                </li>
+                <li>
+                    <a href="converttemp.html">
+                        Convert Temperatures
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h2> Mark to Grade converter</h2>
+    <main>
+        <div id="left_side">
+            <h4>Insert a numeric grade value:</h4>
+            <input type="number" name="" id="mark-input-box" onchange="convertGrade()" onkeypress="clickPress(event)"
+                step="5">
+        </div>
+        <div id="right_side">
+            <h4 id="message">Insert a value.</h4>
+            <h3 id="letter"></h3>
+        </div>
+    </main>
+</body>
+
+</html>
