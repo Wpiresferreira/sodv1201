@@ -1,4 +1,5 @@
 let order = "ASC";
+let arrow =["","","","","",""];
 
 function clickPress(event) {
   if (event.keyCode == 13) {
@@ -71,23 +72,24 @@ function convertTemperature() {
 }
 
 function see_details() {
-  let cifra = "$1200000";
-  console.log(parseFloat(cifra.replace("$", "")));
+  
+  
   document.getElementById("table_e").innerHTML =
-    "<tr><th>#</th>" +
-    '<th onclick="sortData(0)">Name</th>' +
-    '<th onclick="sortData(1)">Position</th>' +
-    '<th onclick="sortData(2)">City</th>' +
-    '<th onclick="sortData(3)">ID</th>' +
-    '<th onclick="sortData(4)">Admission</th>' +
-    '<th onclick="sortData(5)">Salary</th></tr>';
+    "<thead><tr><th>#</th>" +
+    '<th  id="header0" onclick="sortData(0)">Name'+arrow[0]+'</th>' +
+    '<th  id="header1" onclick="sortData(1)">Position'+arrow[1]+'</th>' +
+    '<th  id="header2" onclick="sortData(2)">City'+arrow[2]+'</th>' +
+    '<th  id="header3" onclick="sortData(3)">ID'+arrow[3]+'</th>' +
+    '<th  id="header4" onclick="sortData(4)">Admission'+arrow[4]+'</th>' +
+    '<th  id="header5" onclick="sortData(5)">Annual Salary'+arrow[5]+
+    '</th></tr></thead>';
   let index = 1;
   dataSet.forEach((element) => {
     let odd;
-    if (index % 2) odd = "odd";
-    else odd = "even";
+    if (index % 2) odd = "even";
+    else odd = "odd";
     let row = document.createElement("tr");
-    row.id = "table-content";
+    //row.id = odd;
     let r = "<td class='" + odd + "'>" + index + "</td>";
     r += "<td class='" + odd + "'>" + element[0] + "</td>";
     r += "<td class='" + odd + "'>" + element[1] + "</td>";
@@ -349,12 +351,9 @@ var dataSet = [
     "$85,675",
   ],
 ];
-
+//overide sort method, because is a array
 function sortData(n) {
   if (n != 5) {
-    console.log("trying sort");
-    console.log(order);
-
     dataSet.sort(sortFunction);
 
     function sortFunction(a, b) {
@@ -366,14 +365,8 @@ function sortData(n) {
         return a[n] < b[n] ? 1 : -1;
       }
     }
-    console.log(dataSet[0][0]);
-    const table = document.getElementById("table_e");
-    table.innerHTML = "";
-    see_details();
   } else {
-    console.log("trying sort 5");
     dataSet.sort(sortFunction);
-
     function sortFunction(a, b) {
       let valueA = a[n];
       let valueB = b[n];
@@ -391,14 +384,20 @@ function sortData(n) {
         return valueA < valueB ? 1 : -1;
       }
     }
-    console.log(dataSet[0][0]);
-    const table = document.getElementById("table_e");
-    table.innerHTML = "";
-    see_details();
   }
+  //alternate the order of sorting and put a symbol
   if (order == "ASC") {
+    arrow = ["","","","","",""];
+    arrow[n] = "▲";
     order = "DESC";
-  } else {
+  }
+  else {
+    arrow = ["","","","","",""];
+    arrow[n] = "▼";
     order = "ASC";
   }
+// clean the table and display after sorting
+  const table = document.getElementById("table_e");
+  table.innerHTML = "";
+  see_details();
 }

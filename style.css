@@ -112,13 +112,15 @@ td {
 
 th {
     padding: 8px;
+    background-color: #2E9CCA;
+    color: #25274D;
 }
 
 #salary {
     text-align: right;
 }
 
-.odd {
+.odd{
     background-color: #2E9CCA;
     color: #25274D;
 }
@@ -132,7 +134,7 @@ th {
     color: #25274D;
 }
 
-.even {
+.even{
     background-color: #25274D;
     color: #2E9CCA;
 }
