@@ -1,12 +1,12 @@
+<!--
+* @name: Assignement1
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Wagner Pires Ferreira.
+* @Student ID : 446347
+-->
 <!DOCTYPE html>
-<!-- //*
- *@name: Assignment1
- *@Course Code: SODV1201
- *@Class 
- *
-*// -->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Wagner Personal Profile</title>
 </head>
-
 <body>
+    <header>
         <h1>Wagner Pires Ferreira Profile</h1>
-        <nav id="nav">
+        <nav id="nav"> <!-- Menu Bar -->
             <ul id="menu">
                 <li>
                     <a href="index.html">
@@ -47,14 +47,15 @@
             <img id="image" src="photo.png" alt="" srcset="">
         </div>
         <div id="aboutMe">
-            <p>
+            <h3>
                 About this page:
-            </p>
+            </h3>
             <p>
                 This page was created in order to complete the Assignment 1, course SODV1201 - Summer 2023.
             </p>
             <p>
-                This page contains a navbar that allows you to navigate to other pages, and you can see some Js functionalities.
+                This page contains a navbar that allows you to navigate to other pages, and you can see some Js
+                functionalities.
             </p>
             <p>
                 Enjoy it.
@@ -66,10 +67,13 @@
         <div id="currentDate">
             <script>
                 d = new Date();
-                document.getElementById("currentDate").innerHTML = ('0'+d.getDate()).substring(('0'+d.getDate()).length-2,('0'+d.getDate()).length) + " - " + ('0'+(d.getMonth()+1)).substring(('0'+(d.getMonth()+1)).length-2,('0'+(d.getMonth()+1)).length) + " - " + d.getFullYear();
-                </script>
+                document.getElementById("currentDate").innerHTML = "Visited : " + ('0' + d.getDate()).substring(('0' + d.getDate()).length - 2, ('0' + d.getDate()).length) + " - " + ('0' + (d.getMonth() + 1)).substring(('0' + (d.getMonth() + 1)).length - 2, ('0' + (d.getMonth() + 1)).length) + " - " + d.getFullYear();
+            </script>
         </div>
-        <div>Copyright © 2023 Wagner Pires Ferreira</div>
+        <div>Copyright © 2023 Wagner Pires Ferreira
+        </div>
+
+
     </footer>
 
 </body>

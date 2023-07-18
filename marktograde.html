@@ -1,13 +1,11 @@
-<!-- single and multiple line comment ->
-    
-    
-    <!DOCTYPE html>
-<!-- //*
- *@name: Assignment1
- *@Course Code: SODV1201
- *@Class 
- *
- *// -->
+<!--
+* @name: Assignement1
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Wagner Pires Ferreira.
+* @Student ID : 446347
+-->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,7 +18,7 @@
 
 <body>
     <header>
-        <h1>Wagner Pires Ferreira Profile</h1>
+        <h1>Mark to Grade</h1>
         <nav id="nav">
             <ul id="menu">
                 <li>
@@ -46,7 +44,7 @@
             </ul>
         </nav>
     </header>
-    <h2> Mark to Grade converter</h2>
+
     <main>
         <div id="left_side">
             <h4>Insert a numeric grade value:</h4>
@@ -58,6 +56,19 @@
             <h3 id="letter"></h3>
         </div>
     </main>
+    <footer>
+        <div id="currentDate">
+            <script>
+                d = new Date();
+                document.getElementById("currentDate").innerHTML = "Visited : " + ('0' + d.getDate()).substring(('0' + d.getDate()).length - 2, ('0' + d.getDate()).length) + " - " + ('0' + (d.getMonth() + 1)).substring(('0' + (d.getMonth() + 1)).length - 2, ('0' + (d.getMonth() + 1)).length) + " - " + d.getFullYear();
+            </script>
+        </div>
+        <div>Copyright © 2023 Wagner Pires Ferreira
+        </div>
+
+
+    </footer>
+
 </body>
 
 </html>

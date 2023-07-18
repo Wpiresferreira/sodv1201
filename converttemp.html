@@ -1,26 +1,23 @@
-<!-- single and multiple line comment ->
-    
-    
-    <!DOCTYPE html>
-<!-- //*
- *@name: Assignment1
- *@Course Code: SODV1201
- *@Class 
- *
- *// -->
+<!--
+* @name: Assignement1
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Wagner Pires Ferreira.
+* @Student ID : 446347
+-->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Convert Temperatures</title>
+    <title>Convert Temperature</title>
 </head>
 
 <body>
     <header>
-        <h1>Wagner Pires Ferreira Profile</h1>
+        <h1>Convert Temperature</h1>
         <nav id="nav">
             <ul id="menu">
                 <li>
@@ -46,19 +43,31 @@
             </ul>
         </nav>
     </header>
-    <h2> Convert Temperature</h2>
     <main>
         <div id="left_side">
             <h4>Insert a temperature in °F:</h4>
             <!-- <input type="number" name="" id="mark-input-box" onchange="convertTemperature()" onkeypress="clickPressTemp(event)" -->
-            <input type="number" name="" id="mark-input-box" step="5">
+            <input type="number" name="" id="mark-input-box" onkeypress="clickPressTemp(event)" step="5">
             <button onclick="convertTemperature()">Convert</button>
         </div>
-        <div id="right_side">
-            <h4 id="message">Insert a value.</h4>
-            <h3 id="letter"></h3>
+        <div id="right_side_temp">
+            <h4 id="messageC">Insert a value.</h4>
+            <h4 id="messageK"></h4>
         </div>
     </main>
+    <footer>
+        <p id="currentDate">
+            <script>
+                d = new Date();
+                document.getElementById("currentDate").innerHTML = "Visited : " + ('0' + d.getDate()).substring(('0' + d.getDate()).length - 2, ('0' + d.getDate()).length) + " - " + ('0' + (d.getMonth() + 1)).substring(('0' + (d.getMonth() + 1)).length - 2, ('0' + (d.getMonth() + 1)).length) + " - " + d.getFullYear();
+            </script>
+        </p>
+        <div>Copyright © 2023 Wagner Pires Ferreira
+        </div>
+
+
+    </footer>
+
 </body>
 
 </html>

@@ -6,10 +6,16 @@
     align-items: center;
 }
 
-footer {
+h1{
+    padding: 30px;
+}
+footer{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-size: small;
+    font-style: italic;
+    padding: 20px;
 }
 
 main {
@@ -18,9 +24,10 @@ main {
     justify-content: space-evenly;
 }
 
-#aboutMe {
+#aboutMe p{
     width: 60vw;
     text-align: left;
+    font-style: italic;
 }
 
 #left_side {
@@ -37,8 +44,14 @@ main {
     flex-direction: row;
     width: 40vw;
     height: 100px;
-    align-content: space-evenly;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+}
+#right_side_temp {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    height: 100px;
+    justify-content:space-evenly;
 }
 
 #letter {
@@ -116,25 +129,25 @@ th {
     color: #25274D;
 }
 
-#salary {
+.salary {
     text-align: right;
 }
 
-.odd{
+#odd{
     background-color: #2E9CCA;
     color: #25274D;
 }
 
-.odd:hover {
+#odd:hover {
     background-color: #25274D;
     color: #2E9CCA;
 }
-.even:hover {
+#even:hover {
     background-color: #2E9CCA;
     color: #25274D;
 }
 
-.even{
+#even{
     background-color: #25274D;
     color: #2E9CCA;
 }

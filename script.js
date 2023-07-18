@@ -1,19 +1,19 @@
-let order = "ASC";
-let arrow =["","","","","",""];
+let order = "ASC"; // Vaiable responsible to the order of sorting
+let arrow =["","","","","",""]; // Variable to indicate the arrow of sorting
 
-function clickPress(event) {
+function clickPress(event) { // You can click <enter> to call the function
   if (event.keyCode == 13) {
     convertGrade();
   }
 }
 
-function clickPressTemp(event) {
+function clickPressTemp(event) { 
   if (event.keyCode == 13) {
     convertTemperature();
   }
 }
 
-function convertGrade() {
+function convertGrade() { // function to convert the numeric grade to letter
   let inputValue = document.getElementById("mark-input-box");
   let message = document.getElementById("message");
   let letter = document.getElementById("letter");
@@ -63,46 +63,59 @@ function convertGrade() {
 
 function convertTemperature() {
   let inputValue = document.getElementById("mark-input-box");
-  let message = document.getElementById("message");
-  let letter = document.getElementById("letter");
-  let text = "The grade " + inputValue.value + " corresponds to grade ";
-
-  message.innerHTML = (((inputValue.value - 32) * 5) / 9).toFixed(2)+ "°C";
-  letter.innerHTML = (((inputValue.value - 32) * 5) / 9 + 273.15).toFixed(2) + "K";
+  let messageC = document.getElementById("messageC");
+  let messageK = document.getElementById("messageK");
+  let textC = "Celsius<br><br>";
+  let textK = "Kelvin<br><br>";
+  
+  if (
+    inputValue.value == null ||
+    inputValue.value == "" ||
+    inputValue.value == undefined
+  ){
+  messageC.innerHTML = "Insert a value.";
+  messageK.innerHTML = "";
+  } else{
+  messageC.innerHTML = textC + (((inputValue.value - 32) * 5) / 9).toFixed(2)+ "°C";
+  messageK.innerHTML = textK + (((inputValue.value - 32) * 5) / 9 + 273.15).toFixed(2) + "K";
+}
 }
 
 function see_details() {
   
   
   document.getElementById("table_e").innerHTML =
-    "<thead><tr><th>#</th>" +
-    '<th  id="header0" onclick="sortData(0)">Name'+arrow[0]+'</th>' +
-    '<th  id="header1" onclick="sortData(1)">Position'+arrow[1]+'</th>' +
-    '<th  id="header2" onclick="sortData(2)">City'+arrow[2]+'</th>' +
-    '<th  id="header3" onclick="sortData(3)">ID'+arrow[3]+'</th>' +
-    '<th  id="header4" onclick="sortData(4)">Admission'+arrow[4]+'</th>' +
-    '<th  id="header5" onclick="sortData(5)">Annual Salary'+arrow[5]+
+    "<tr><th>#</th>" +
+    // each header call the sort function with the argument corresponding column index.
+    // each header is compose by the name + variable arrow to indicate the sort direction
+    // initially the arrow is '', and it will be changed after sort method
+    '<th onclick="sortData(0)">Name'+arrow[0]+'</th>' + 
+    '<th onclick="sortData(1)">Position'+arrow[1]+'</th>' +
+    '<th onclick="sortData(2)">City'+arrow[2]+'</th>' +
+    '<th onclick="sortData(3)">ID'+arrow[3]+'</th>' +
+    '<th onclick="sortData(4)">Admission'+arrow[4]+'</th>' +
+    '<th onclick="sortData(5)">Annual Salary'+arrow[5]+
     '</th></tr></thead>';
   let index = 1;
-  dataSet.forEach((element) => {
-    let odd;
+  dataSet.forEach((element) => { // read each element of 2D array
+    let odd; // variable to indicate if row s even or odd. It is important for style
     if (index % 2) odd = "even";
     else odd = "odd";
     let row = document.createElement("tr");
-    //row.id = odd;
-    let r = "<td class='" + odd + "'>" + index + "</td>";
-    r += "<td class='" + odd + "'>" + element[0] + "</td>";
-    r += "<td class='" + odd + "'>" + element[1] + "</td>";
-    r += "<td class='" + odd + "'>" + element[2] + "</td>";
-    r += "<td class='" + odd + "'>" + element[3] + "</td>";
-    r += "<td class='" + odd + "'>" + element[4] + "</td>";
-    r += "<td id='salary' class='" + odd + "'>" + element[5] + "</td>";
-    row.innerHTML = r;
+    row.id = odd;
+    let r = "<td id='" + odd + "'>" + index + "</td>";
+    r += "<td id='" + odd + "'>" + element[0] + "</td>";
+    r += "<td id='" + odd + "'>" + element[1] + "</td>";
+    r += "<td id='" + odd + "'>" + element[2] + "</td>";
+    r += "<td id='" + odd + "'>" + element[3] + "</td>";
+    r += "<td id='" + odd + "'>" + element[4] + "</td>";
+    r += "<td class='salary' id='" + odd + "'>" + element[5] + "</td>";
+    row.innerHTML = r; // build the row structure and the next line includes it in the table
     document.getElementById("table_e").appendChild(row);
     index++;
   });
 }
-
+// data provided by the teacher
 var dataSet = [
   [
     "Brielle Williamson",
@@ -144,7 +157,14 @@ var dataSet = [
     "2008/12/13",
     "$103,600",
   ],
-  ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+  [
+    "Jena Gaines",
+    "Office Manager",
+    "London",
+    "3814",
+    "2008/12/19",
+    "$90,560"
+  ],
   [
     "Quinn Flynn",
     "Support Lead",
@@ -161,7 +181,14 @@ var dataSet = [
     "2011/04/25",
     "$320,800",
   ],
-  ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+  [
+    "Garrett Winters",
+    "Accountant",
+    "Tokyo",
+    "8422",
+    "2011/07/25",
+    "$170,750"
+  ],
   [
     "Ashton Cox",
     "Junior Technical Author",
@@ -178,7 +205,14 @@ var dataSet = [
     "2012/03/29",
     "$433,060",
   ],
-  ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+  [
+    "Airi Satou",
+    "Accountant",
+    "Tokyo",
+    "5407",
+    "2008/11/28",
+    "$162,700"
+  ],
   [
     "Charde Marshall",
     "Regional Director",
@@ -235,7 +269,14 @@ var dataSet = [
     "2012/10/13",
     "$132,000",
   ],
-  ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+  [
+    "Dai Rios",
+    "Personnel Lead",
+    "Edinburgh",
+    "2290",
+    "2012/09/26",
+    "$217,500"
+  ],
   [
     "Jenette Caldwell",
     "Development Lead",
@@ -276,7 +317,14 @@ var dataSet = [
     "2009/10/09",
     "$1,200,000",
   ],
-  ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+  [
+    "Gavin Joyce",
+    "Developer",
+    "Edinburgh",
+    "8822",
+    "2010/12/22",
+    "$92,575"
+  ],
   [
     "Jennifer Chang",
     "Regional Director",
@@ -317,7 +365,14 @@ var dataSet = [
     "2011/06/02",
     "$95,400",
   ],
-  ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+  [
+    "Suki Burks",
+    "Developer",
+    "London",
+    "6832",
+    "2009/10/22",
+    "$114,500"
+  ],
   [
     "Prescott Bartlett",
     "Technical Author",
@@ -351,9 +406,9 @@ var dataSet = [
     "$85,675",
   ],
 ];
-//overide sort method, because is a array
-function sortData(n) {
-  if (n != 5) {
+
+function sortData(n) { // function to sort the table. The argument is the column index
+  if (n != 5) { 
     dataSet.sort(sortFunction);
 
     function sortFunction(a, b) {
@@ -366,12 +421,12 @@ function sortData(n) {
       }
     }
   } else {
-    dataSet.sort(sortFunction);
+    dataSet.sort(sortFunction); // If column == Salary (5), the function convert first in number
     function sortFunction(a, b) {
       let valueA = a[n];
       let valueB = b[n];
       valueA = parseFloat(
-        valueA.replace("$", "").replace(",", "").replace(",", "")
+        valueA.replace("$", "").replace(",", "").replace(",", "") // remove $ and , before convert number
       );
       valueB = parseFloat(
         valueB.replace("$", "").replace(",", "").replace(",", "")
@@ -379,17 +434,17 @@ function sortData(n) {
       if (valueA === valueB) {
         return 0;
       } else if (order == "ASC") {
-        return valueA < valueB ? -1 : 1;
+        return valueA < valueB ? -1 : 1; // if asc sorting
       } else {
-        return valueA < valueB ? 1 : -1;
+        return valueA < valueB ? 1 : -1; // if desc sorting
       }
     }
   }
   //alternate the order of sorting and put a symbol
   if (order == "ASC") {
-    arrow = ["","","","","",""];
-    arrow[n] = "▲";
-    order = "DESC";
+    arrow = ["","","","","",""]; // clean arrow that indicate the column and direction before sorted
+    arrow[n] = "▲"; // put the arrow indicading the direction of sorting
+    order = "DESC"; // change the variable for the next sort
   }
   else {
     arrow = ["","","","","",""];
@@ -398,6 +453,6 @@ function sortData(n) {
   }
 // clean the table and display after sorting
   const table = document.getElementById("table_e");
-  table.innerHTML = "";
-  see_details();
+  table.innerHTML = ""; // clean the table in html
+  see_details(); // rebuild the table in the html page
 }
