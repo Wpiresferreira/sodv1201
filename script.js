@@ -21,7 +21,7 @@ function convertGrade() { // function to convert the numeric grade to letter
 
   try {
     if (inputValue.value > 100) {
-      letter.innerHTML = "";
+      letter.innerHTML = "_";
       throw new Error(
         "The maximum grade is 100.\nPlease insert a value less or equal than 100."
       );
@@ -31,11 +31,11 @@ function convertGrade() { // function to convert the numeric grade to letter
       inputValue.value == "" ||
       inputValue.value == undefined
     ) {
-      letter.innerHTML = "";
+      letter.innerHTML = "_";
       throw new Error("Insert a value.");
     }
     if (inputValue.value < 0) {
-      letter.innerHTML = "";
+      letter.innerHTML = "_";
       throw new Error(
         "The grade cannot be negative.\nPlease insert a positive value."
       );
@@ -63,6 +63,7 @@ function convertGrade() { // function to convert the numeric grade to letter
 
 function convertTemperature() {
   let inputValue = document.getElementById("mark-input-box");
+  let message = document.getElementById("message");
   let messageC = document.getElementById("messageC");
   let messageK = document.getElementById("messageK");
   let textC = "Celsius<br><br>";
@@ -73,11 +74,13 @@ function convertTemperature() {
     inputValue.value == "" ||
     inputValue.value == undefined
   ){
-  messageC.innerHTML = "Insert a value.";
-  messageK.innerHTML = "";
+  message.innerHTML = "Insert a value.";
+  messageC.innerHTML = "_";
+  messageK.innerHTML = "_";
   } else{
-  messageC.innerHTML = textC + (((inputValue.value - 32) * 5) / 9).toFixed(2)+ "°C";
-  messageK.innerHTML = textK + (((inputValue.value - 32) * 5) / 9 + 273.15).toFixed(2) + "K";
+    message.innerHTML = "";
+    messageC.innerHTML = textC + (((inputValue.value - 32) * 5) / 9).toFixed(1)+ "°C";
+  messageK.innerHTML = textK + (((inputValue.value - 32) * 5) / 9 + 273.15).toFixed(1) + "K";
 }
 }
 

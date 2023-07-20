@@ -45,14 +45,15 @@
     </header>
     <main>
         <div id="left_side">
-            <h4>Insert a temperature in °F:</h4>
-            <!-- <input type="number" name="" id="mark-input-box" onchange="convertTemperature()" onkeypress="clickPressTemp(event)" -->
+            <h4>Insert a temperature:</h4>
             <input type="number" name="" id="mark-input-box" onkeypress="clickPressTemp(event)" step="5">
+            <h4>°F</h4>
             <button onclick="convertTemperature()">Convert</button>
         </div>
         <div id="right_side_temp">
-            <h4 id="messageC">Insert a value.</h4>
-            <h4 id="messageK"></h4>
+            <h4 id="message">Insert a value.</h4>
+            <h4 id="messageC">Celsius<br><br>_ºC</h4>
+            <h4 id="messageK">Kelvin<br><br>_K</h4>
         </div>
     </main>
     <footer>

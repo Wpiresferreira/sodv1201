@@ -1,6 +1,6 @@
 * {
     background-color: #25274D;
-    color: #2E9CCA;
+    color: #8fdfff;
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     align-items: center;
@@ -56,13 +56,17 @@ main {
 
 #letter {
     font-size: 72px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
 }
 
 #mark-input-box {
     font-size: larger;
     width: 60px;
-    background-color: #2E9CCA;
-    color: #414470;
+    color: #8fdfff;
 }
 
 a {
@@ -115,17 +119,19 @@ table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
+    border: 2px;
+    border-style: inset;
 }
 
 td {
     text-align: left;
     padding: 8px;
-    /* border-color: #2E9CCA; */
 }
 
 th {
     padding: 8px;
-    background-color: #2E9CCA;
+    margin: 8px;
+    background-color: #8fdfff;
     color: #25274D;
 }
 
@@ -134,22 +140,22 @@ th {
 }
 
 #odd{
-    background-color: #2E9CCA;
+    background-color: #8fdfff;
     color: #25274D;
 }
 
 #odd:hover {
     background-color: #25274D;
-    color: #2E9CCA;
+    color: #8fdfff;
 }
 #even:hover {
-    background-color: #2E9CCA;
+    background-color: #8fdfff;
     color: #25274D;
 }
 
 #even{
     background-color: #25274D;
-    color: #2E9CCA;
+    color: #8fdfff;
 }
 
 #image-container {
@@ -161,4 +167,21 @@ th {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+#messageC{
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+
+}
+#messageK{
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+
 }
