@@ -25,12 +25,12 @@ $("document").ready(function () {
 
     // $("#00").click(function () {
     // //     console.log("Initializing...")
-    // // function mark(n) {
+     function mark(n) {
        
-    //     board[0][0] = turn;
-    //     updateBoard()
-    //     changeTurn()
-    // });
+         board[0][0] = turn;
+         updateBoard()
+         changeTurn()
+     }
 
     function turnMessage() {
         console.log("Turning message " + turn);
