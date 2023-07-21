@@ -138,6 +138,11 @@ td {
     border-style: inset;
 }
 
+.cell{
+    height: 20px;
+    width: 20px;
+}
+
 th {
     padding: 8px;
     margin: 8px;
