@@ -1,0 +1,197 @@
+* {
+    background-color: #25274D;
+    color: #8fdfff;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    align-items: center;
+}
+#animated{
+    position:absolute;
+    background-color: beige;
+    height: 100px;
+    width: 100px;
+    
+}
+
+h1{
+    padding: 30px;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: small;
+    font-style: italic;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#aboutMe p{
+    width: 60vw;
+    text-align: left;
+    font-style: italic;
+}
+
+#left_side {
+    display: flex;
+    width: 30vw;
+    height: 100px;
+    align-content: center;
+    justify-content: space-evenly;
+
+}
+
+#right_side {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    height: 100px;
+    justify-content: space-evenly;
+}
+#right_side_temp {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    height: 100px;
+    justify-content:space-evenly;
+}
+
+#letter {
+    font-size: 72px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+}
+
+#mark-input-box {
+    font-size: larger;
+    width: 60px;
+    color: #8fdfff;
+}
+
+a {
+    text-decoration: none;
+    background-color: #414470;
+
+}
+
+header a:hover {
+    background: rgb(163, 163, 163);
+    text-decoration: underline;
+}
+
+#header {
+    display: flex;
+    padding: 15px 50px;
+    max-height: 80px;
+    min-width: 280px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(57, 131, 120);
+
+}
+
+#menu {
+    display: flex;
+    height: 70px;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #414470;
+
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#btn-menu {
+    display: none;
+    border: none;
+    font-size: larger;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px;
+    border-style: inset;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border-color: azure;
+    border-style: inset;
+}
+
+th {
+    padding: 8px;
+    margin: 8px;
+    background-color: #8fdfff;
+    color: #25274D;
+}
+
+.salary {
+    text-align: right;
+}
+
+#odd{
+    background-color: #8fdfff;
+    color: #25274D;
+}
+
+#odd:hover {
+    background-color: #25274D;
+    color: #8fdfff;
+}
+#even:hover {
+    background-color: #8fdfff;
+    color: #25274D;
+}
+
+#even{
+    background-color: #25274D;
+    color: #8fdfff;
+}
+
+#image-container {
+    display: inline-flex;
+    width: 20vw;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#messageC{
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+
+}
+#messageK{
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+
+}

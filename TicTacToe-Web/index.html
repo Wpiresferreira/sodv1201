@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="code.jquery.com_jquery-3.7.0.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+</head>
+<body>
+    <header>
+        <div id="title">
+
+            <h1>
+                Tic Tac Toe Game
+            </h1>
+        </div>
+        <div id="menu-bar">
+            <ul>
+                <li id="start">Start</li>
+                <li id="help">Help</li>
+            </ul>
+        </div>
+    </header>
+<main>
+    <div id="left-side">
+<h3 id="player1Name"></h3>
+<h3 id="player1Token"></h3>
+</div>
+<div id="center">
+    <h3 id="turnMessage"></h3>
+    <table id="board">
+        <tr>
+            <td id="00" class="cell"></td>
+            <td id="01" class="cell"></td>
+            <td id="02" onclick="mark('02')"></td>
+        </tr>
+        <tr>
+            <td id="10"></td>
+            <td id="11"></td>
+            <td id="12"></td>
+        </tr>
+        <tr>
+            <td id="20"></td>
+            <td id="21"></td>
+            <td id="22"></td>
+        </tr>
+    </table>
+</div>
+<div id="right-side">
+    <h3 id="player2Name"></h3>
+    <h3 id="player2Token"></h3>
+    
+    </div>
+</main>
+<footer>
+
+</footer>
+    
+</body>
+</html>
