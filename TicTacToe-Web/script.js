@@ -181,6 +181,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O"){
+           winner("O")
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "12vw");
             $("#winner-line").css("width", "6px");
@@ -189,6 +190,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O"){
+        winner("O")
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "38vw");
             $("#winner-line").css("width", "6px");
@@ -197,6 +199,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O"){
+           winner("O") 
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "63vw");
             $("#winner-line").css("width", "6px");
@@ -206,6 +209,7 @@ $("document").ready(function () {
             
         }
         if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O"){           
+            winner("O")
             $("#winner-line").css("margin-top", "20px");
             $("#winner-line").css("margin-left", "37vw");
             $("#winner-line").css("width", "6px");
@@ -215,6 +219,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
+           winner("O") 
             $("#winner-line").css("margin-top", "20px");
             $("#winner-line").css("margin-left", "37vw");
             $("#winner-line").css("width", "6px");
@@ -241,6 +246,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X"){
+            winner("X")
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "12vw");
             $("#winner-line").css("width", "6px");
@@ -249,6 +255,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X"){
+           winner("X")
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "38vw");
             $("#winner-line").css("width", "6px");
@@ -257,6 +264,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X"){
+           winner("X")
             $("#winner-line").css("margin-top", "0");
             $("#winner-line").css("margin-left", "63vw");
             $("#winner-line").css("width", "6px");
@@ -266,6 +274,7 @@ $("document").ready(function () {
             
         }
         if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X"){           
+            winner("X")
             $("#winner-line").css("margin-top", "20px");
             $("#winner-line").css("margin-left", "37vw");
             $("#winner-line").css("width", "6px");
@@ -275,6 +284,7 @@ $("document").ready(function () {
             return
         }
         if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
+           winner("X")
             $("#winner-line").css("margin-top", "20px");
             $("#winner-line").css("margin-left", "37vw");
             $("#winner-line").css("width", "6px");
