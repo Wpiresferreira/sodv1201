@@ -5,7 +5,7 @@ $("document").ready(function () {
     let turn = player1 //P1 = X / P2 = O
     let hasWinner = ""
     let mode = "2player"
-    player2.name = "Computer"
+    //player2.name = "Computer"
     $("#1PlayerMode").hide()
     $("#2PlayerMode").show()
     start()
