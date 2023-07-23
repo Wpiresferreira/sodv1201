@@ -1,73 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+@font-face {
+    font-family: PermanentMarker;
+    src: url('PermanentMarker-Regular.ttf');
+}
 
-<head>
-    <script src="code.jquery.com_jquery-3.7.0.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe</title>
-</head>
+* {
+    background-color: #25274D;
+    color: #8fdfff;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    align-items: center;
+}
 
-<body>
-    <header>
-        <div id="title">
-            
-            <h1>
-                Tic Tac Toe Game
-            </h1>
-        </div>
-        <div id="menu-bar">
-            <!-- <ul> -->
-                <button id="start">Restart</button>
-                <button id="1PlayerMode">1 Player Mode</button>
-                <button id="2PlayerMode">2 Player Mode</button>
-                <!-- <li id="help">Help</li> -->
-                <!-- </ul> -->
-            </div>
-        </header>
-        <div id="alertMessage"> 
-            <!-- <div> -->
-                Alert Message
-                <!-- </div> -->
-            </div>
-            <main>
-                <div id="left-side">
-                    <div id="player1Name"></div>
-                    <div id="player1Token"></div>
-                </div>
-                <div id="right-side">
-                    <h3 id="player2Name"></h3>
-                    <h3 id="player2Token"></h3>
-                </div>
-                <div id="center">
-                    <h3 id="turnMessage"></h3>
-                    <div id="winner-line"></div>
-                    <table id="board">
-                        <tr>
-                    <td id="cell00" class="cell"></td>
-                    <td id="cell01" class="cell"></td>
-                    <td id="cell02" class="cell"></td>
-                </tr>
-                <tr>
-                    <td id="cell10" class="cell"></td>
-                    <td id="cell11" class="cell"></td>
-                    <td id="cell12" class="cell"></td>
-                </tr>
-                <tr>
-                    <td id="cell20" class="cell"></td>
-                    <td id="cell21" class="cell"></td>
-                    <td id="cell22" class="cell"></td>
-                </tr>
-            </table>
-        </div>
-    </main>
-    <div id="winner"></div>
-    <footer>
+#animated {
+    position: absolute;
+    background-color: beige;
+    height: 100px;
+    width: 100px;
 
-    </footer>
+}
 
-</body>
+h1 {
+    padding: 30px;
+}
 
-</html>
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: small;
+    font-style: italic;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#aboutMe p {
+    width: 60vw;
+    text-align: left;
+    font-style: italic;
+}
+
+#left-side {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    height: 50;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+#right-side {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    height: 50px;
+    justify-content: space-evenly;
+}
+
+#winner-line{
+    position: fixed;
+    margin-top: 13vw;
+    width: 77vw;
+    height: 6px;
+    background-color: red;
+}
+
+#alertMessage{
+    display:none;
+    position:fixed ;
+    padding: 60px 0px;
+    background-color: red;
+
+}
+#letter {
+    font-size: 72px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px;
+    border-style: inset;
+    border-radius: 9px;
+}
+
+#mark-input-box {
+    font-size: larger;
+    width: 60px;
+    color: #8fdfff;
+}
+
+a {
+    text-decoration: none;
+    background-color: #414470;
+
+}
+
+header a:hover {
+    background: rgb(163, 163, 163);
+    text-decoration: underline;
+}
+
+#header {
+    display: flex;
+    padding: 15px 50px;
+    max-height: 80px;
+    min-width: 280px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(57, 131, 120);
+
+}
+
+#menu {
+    display: flex;
+    height: 70px;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #414470;
+
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#btn-menu {
+    display: none;
+    border: none;
+    font-size: larger;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    text-align: center;
+    padding: 5vw;
+}
+
+#cell00 {
+    border-bottom: 2px dashed;
+    border-right: 2px dashed;
+}
+
+#cell01 {
+    border-bottom: 2px dashed;
+    border-right: 2px dashed;
+    border-left: 2px dashed;
+}
+
+#cell02 {
+    border-bottom: 2px dashed;
+    border-left: 2px dashed;
+}
+
+#cell10 {
+    border-bottom: 2px dashed;
+    border-top: 2px dashed;
+    border-right: 2px dashed;
+}
+
+#cell11 {
+    border-bottom: 2px dashed;
+    border-right: 2px dashed;
+    border-left: 2px dashed;
+    border-top: 2px dashed;
+}
+
+#cell12 {
+    border-top: 2px dashed;
+    border-left: 2px dashed;
+    border-bottom: 2px dashed;
+}
+
+#cell20 {
+    border-top: 2px dashed;
+    border-right: 2px dashed;
+}
+
+#cell21 {
+    border-top: 2px dashed;
+    border-right: 2px dashed;
+    border-left: 2px dashed;
+}
+
+#cell22 {
+    border-top: 2px dashed;
+    border-left: 2px dashed;
+}
+
+.cell {
+    width: 15vw;
+    height: 15vw;
+    font-family: PermanentMarker;
+    font-size: xx-large;
+}
