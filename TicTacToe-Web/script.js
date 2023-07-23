@@ -4,7 +4,7 @@ $("document").ready(function () {
     let board;
     let turn = player1 //P1 = X / P2 = O
     let hasWinner = ""
-    let mode = "1player"
+    let mode = "2player"
     player2.name = "Computer"
     $("#1PlayerMode").hide()
     $("#2PlayerMode").show()
@@ -21,16 +21,15 @@ $("document").ready(function () {
         $("#player1Token").text(player1.token)
         $("#player2Name").text(player2.name)
         $("#player2Token").text(player2.token)
-        if (Math.floor(Math.random() * 2) == 0) {
-            turn = player1
-        }
-        else {
-            turn = player2
-        }
-        showMessage("Choosing 1st Player")
-        hideMessage()
-        setTimeout(showMessage(turn.name + " will start."), 100000)
-        hideMessage()
+      //  if (Math.floor(Math.random() * 2) == 0) {
+//    turn = player1
+// }
+// else 
+        // turn = player2 }
+        // showMessage("Choosing 1st Player")
+     // hideMessage()
+        //setTimeout(showMessage(turn.name + " will start."), 100000)
+       // hideMessage()
 
         hasWinner = ""
 
@@ -66,21 +65,21 @@ $("document").ready(function () {
     //     }
 
 
-    $("#1PlayerMode").click(function () {
-        mode = "1player"
-        player2.name = "Computer"
-        $("#1PlayerMode").hide()
-        $("#2PlayerMode").show()
-        start()
-    })
+ //   $("#1PlayerMode").click(function () {
+       // mode = "1player"
+        //player2.name = "Computer"
+        //$("#1PlayerMode").hide()
+        //$("#2PlayerMode").show()
+        //start()
+    //})
 
-    $("#2PlayerMode").click(function () {
-        mode = "2player"
-        player2.name = "Player 2"
-        $("#2PlayerMode").hide()
-        $("#1PlayerMode").show()
-        start()
-    })
+    //$("#2PlayerMode").click(function () {
+        //mode = "2player"
+        //player2.name = "Player 2"
+        //$("#2PlayerMode").hide()
+        //$("#1PlayerMode").show()
+        //start()
+    //})
 
     $(".cell").click(function () {
         mark(this.id)
