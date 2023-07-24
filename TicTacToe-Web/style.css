@@ -48,8 +48,8 @@ main {
     display: flex;
     flex-direction: row;
     width: 30vw;
-    height: 50;
-    align-content: center;
+    height: 50px;
+    align-content: left;
     justify-content: space-evenly;
 }
 
@@ -58,6 +58,7 @@ main {
     flex-direction: row;
     width: 30vw;
     height: 50px;
+    align-content: right;
     justify-content: space-evenly;
 }
 
