@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Varela+Round">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Get2</title>
+</head>
+
+<body>
+    <header>
+        <!-- <button id="changeUser" onclick="changeUser()">Change Authenticated User</button>
+        <div id="squares">
+            <div>
+                <button id="square0" onclick="changeColor()">Change Color</button>
+            </div>
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+        </div> -->
+        <div id="top-bar">
+            <div>
+                <div id="welcome-message" class="welcome"></div>
+                <div class="welcome" onclick="logout()">logout</div>
+                <a class="not-authenticated" onclick="goLogin()">Login</a>
+                <a class="not-authenticated" onclick="goSignup()">Sign up</a>
+            </div>
+        </div>
+        <div id="title"> 2Get2 - Sharing the world with you</div>
+        <div id="menu-bar">
+            <div id="line1" class="owner-authenticated">
+                <ul>
+                    <li>Owner Menu</li>
+                    <!-- <li>My Properties</li> -->
+                </ul>
+            </div>
+            <div id="line2" class="renter-authenticated">
+                <ul>
+                    <li>Renter Menu</li>
+                    <!-- <li>Sign up</li> -->
+                    <!-- <li>Sign in</li> -->
+                </ul>
+            </div>
+            <div id="line3">
+                <ul>
+                    <li>Find Spaces</li>
+                </ul>
+            </div>
+            <div id="line4">
+                <ul>
+                    <li>Help</li>
+                </ul>
+            </div>
+            <div id="line5" class="admin-authenticated">
+                <ul>
+                    <li>Admin Menu</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="left-side">
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div id="center">
+            <div id="alert-message">
+                test
+            </div>
+            <div class="login">
+                <p>Username</p>
+                <input type="text" name="username" id="loginUsername">
+                <p>Password</p>
+                <input type="password" name="password" id="loginPassword">
+                <button type="button" onclick="login()">Login</button>
+                <p id="msgLogin"></p>
+            </div>
+
+            <div class="signup">
+                <p>Create a new user</p>
+                <p>Enter your name</p>
+                <input type="text" name="username" id="newname">
+                <p>Enter your Username</p>
+                <input type="text" name="username" id="newusername">
+                <p>Choose a password</p>
+                <input type="password" name="password" id="newpassword">
+                <p>Repeat a password</p>
+                <input type="password" name="password" id="newpasswordrepeated">
+                <br>
+                <select name="type-user" id="type-user">
+                    <option value="renter">Renter</option>
+                    <option value="owner">Owner</option>
+                    </select>
+                    <br>
+                <button type="button" onclick="signup()">Add New User</button>
+                <p id="msgSignup"></p>
+            </div>
+        </div>
+        <div id="right-side">
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
