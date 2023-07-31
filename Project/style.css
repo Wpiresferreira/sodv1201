@@ -125,11 +125,31 @@ li{
     display: flex;
 }
 
+.newProperty{
+    display:flex;
+    flex-direction: column;
+    padding: 2vw;
+}
+
+.editProperty{
+    display:flex;
+    flex-direction: column;
+    padding: 2vw;
+}
 
 
 #title{
     font-size: 4.5vw;
 }
+
+.cardProperty{
+    display: flex;
+    padding: 1vw;
+    border-color: var(--color4);
+    border-style: solid;
+    border-radius: 20px;
+}
+
 /* * {
     background-color: #25274D;
     color: #8fdfff;

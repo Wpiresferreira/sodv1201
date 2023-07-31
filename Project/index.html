@@ -75,8 +75,8 @@
                 test
             </div>
             <div class="login">
-                <p>Username</p>
-                <input type="text" name="username" id="loginUsername">
+                <p>email</p>
+                <input type="text" name="email" id="loginemail">
                 <p>Password</p>
                 <input type="password" name="password" id="loginPassword">
                 <button type="button" onclick="login()">Login</button>
@@ -86,21 +86,80 @@
             <div class="signup">
                 <p>Create a new user</p>
                 <p>Enter your name</p>
-                <input type="text" name="username" id="newname">
-                <p>Enter your Username</p>
-                <input type="text" name="username" id="newusername">
+                <input type="text" name="email" id="newname">
+                <p>Enter your email</p>
+                <input type="text" name="email" id="newemail">
+                <p>Phone number</p>
+                <input type="text" name="phone" id="newphone">
                 <p>Choose a password</p>
                 <input type="password" name="password" id="newpassword">
                 <p>Repeat a password</p>
                 <input type="password" name="password" id="newpasswordrepeated">
                 <br>
                 <select name="type-user" id="type-user">
-                    <option value="renter">Renter</option>
+                    <option value="renter">Coworker</option>
                     <option value="owner">Owner</option>
                     </select>
                     <br>
                 <button type="button" onclick="signup()">Add New User</button>
                 <p id="msgSignup"></p>
+            </div>
+            <button onclick="showListProperties()">showListProperties</button>
+            <div class="listProperties">
+                <div id="filterProperties">
+                    <input type="checkbox" name="Owner" id="">
+                </div>
+                <!-- <div class="cardProperty">
+                    <div class="left-side-card">
+                        Business Tower
+                    </div>
+                    <div class="right-side-card">
+                        Address: 7 St SW <br>
+                        Neighborhood: Downtown br
+                        Squared Feet: 1000.00 <br>
+                        Has Parking Garage: No <br>
+                        Has Public Transportation: Yes
+                        
+                    </div>
+                </div> -->
+            </div>
+            <div class="newProperty">
+                idProperty:
+                <input type="number" name="" id="idProperty"> 
+                idOwner: 
+                <input type="number" name="" id="idOwner"> 
+                Property Name:
+                <input type="text" name="" id="propertyName"> 
+                Address:
+                <input type="text" name="" id="propertyAddress">
+                Neighborhood:
+                <input type="text" name="" id="propertyNeighborhood">
+                squaredFeet: "1000.00", 
+                <input type="number" name="" id="propertySqFt"> 
+                Has Parking Garage: 
+                <input type="checkbox" name="" id="hasParkingGarage">
+                Has Accessible Public Transportation:
+                <input type="checkbox" name="" id="hasAccessiblePublicTransportation">
+                <button onclick="addNewProperty()">Add</button>
+            </div>
+            <div class="editProperty">
+                idProperty:
+                <input type="number" name="" id="idPropertyEdit"> 
+                idOwner: 
+                <input type="number" name="" id="idOwnerEdit"> 
+                Property Name:
+                <input type="text" name="" id="propertyNameEdit"> 
+                Address:
+                <input type="text" name="" id="propertyAddressEdit">
+                Neighborhood:
+                <input type="text" name="" id="propertyNeighborhoodEdit">
+                squaredFeet: "1000.00", 
+                <input type="number" name="" id="propertySqFtEdit"> 
+                Has Parking Garage: 
+                <input type="checkbox" name="" id="hasParkingGarageEdit">
+                Has Accessible Public Transportation:
+                <input type="checkbox" name="" id="hasAccessiblePublicTransportationEdit">
+                <button onclick="EditPropertyButton()">Edit</button>
             </div>
         </div>
         <div id="right-side">

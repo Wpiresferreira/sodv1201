@@ -2,35 +2,127 @@ let colorSchema = 0
 let state = "not-authenticated" // To storage the authentication status
 // let userHasProperty = false
 let userLogged // To store the obj of the user logged
+$(".newProperty").hide()
+$(".editProperty").hide()
 
 updateAuthentication()
 
-let users =[
-    {name : "Administrator",
-    username: "admin",
-    password: "admin",
-    type: "admin"},
-    {name: "Owner",
-    username: "owner",
-    password: "owner",
-    type: "owner"},
-    {name: "Renter",
-    username: "renter",
-    password: "renter",
-    type: "renter"}];
+let users = [
+    {
+        name: "Administrator",
+        email: "admin",
+        phone: "14036011100",
+        password: "admin",
+        type: "admin"
+    },
+    {
+        name: "Owner",
+        email: "owner",
+        phone: "14036011101",
+        password: "owner",
+        idOwner: "3",
+        type: "owner"
+    },
+    {
+        name: "Renter",
+        email: "renter",
+        phone: "14036011102",
+        password: "renter",
+        type: "renter"
+    },
+    {
+        name: 'Liam Smith',
+        phone: '(403) 947-9469',
+        email: 'liam.smith@domain.com',
+        password: 'xxx',
+        type: 'owner'
+    },
+    {
+        name: 'Jackson Brown',
+        phone: '(403) 050-0505',
+        email: 'jackson.brown@domain.com',
+        password: 'xxx',
+        type: 'owner'
+    },
+    {
+        name: 'Noah Tremblay',
+        phone: '(403) 653-6533',
+        email: 'noah.tremblay@domain.com',
+        password: 'xxx',
+        type: 'owner'
+    },
+    {
+        name: 'Lucas Martin',
+        phone: '(403) 878-8780',
+        email: 'lucas.martin@domain.com',
+        password: 'xxx',
+        type: 'owner'
+    },
+    {
+        name: 'Oliver Roy',
+        phone: '(403) 002-0016',
+        email: 'oliver.roy@domain.com',
+        password: 'xxx',
+        type: 'owner'
+    },
+    { name: "Grayson Gagnon", phone: "(403) 660-6601", email: "grayson.gagnon@domain.com", password: "xxx", type: "renter" },
+    { name: "Leo Lee", phone: "(403) 868-8684", email: "leo.lee@domain.com", password: "xxx", type: "renter" },
+    { name: "Jack Wilson", phone: "(403) 343-3429", email: "jack.wilson@domain.com", password: "xxx", type: "renter" },
+    { name: "Benjamim Jonhson", phone: "(403) 843-8428", email: "benjamim.jonhson@domain.com", password: "xxx", type: "renter" },
+    { name: "Willian MacDonald", phone: "(403) 517-5167", email: "willian.macdonald@domain.com", password: "xxx", type: "renter" },
+    { name: "Olivia Taylor", phone: "(403) 762-7622", email: "olivia.taylor@domain.com", password: "xxx", type: "renter" },
+    { name: "Emma Campbell", phone: "(403) 162-1622", email: "emma.campbell@domain.com", password: "xxx", type: "renter" },
+    { name: "Mia Anderson", phone: "(403) 510-5102", email: "mia.anderson@domain.com", password: "xxx", type: "renter" },
+    { name: "Sophia Jones", phone: "(403) 428-4275", email: "sophia.jones@domain.com", password: "xxx", type: "renter" },
+    { name: "Zoey Leblanc", phone: "(403) 679-6788", email: "zoey.leblanc@domain.com", password: "xxx", type: "renter" },
+    { name: "Charlotte Miller", phone: "(403) 128-1278", email: "charlotte.miller@domain.com", password: "xxx", type: "renter" },
+    { name: "Amelia White", phone: "(403) 192-1925", email: "amelia.white@domain.com", password: "xxx", type: "renter" },
+    { name: "Aria Morin", phone: "(403) 598-5976", email: "aria.morin@domain.com", password: "xxx", type: "renter" },
+    { name: "Mila Scott", phone: "(403) 982-9817", email: "mila.scott@domain.com", password: "xxx", type: "renter" },
+    { name: "Hannah Ross", phone: "(403) 742-7418", email: "hannah.ross@domain.com", password: "xxx", type: "renter" },
+    { name: "Matheus Alves", phone: "(403) 234-7890", email: "matheus.alves@domain.com", password: "xxx", type: "renter" }
+]
 
+let properties = [
+    { idProperty: "1", idOwner: "3", name: "Business Tower", address: "7 St SW", neighborhood: "Downtown", squaredFeet: "1000.00", hasParkingGarage: "0", hasAccessiblePublicTransportation: "1" },
+    { idProperty: "2", idOwner: "1", name: "Central Business", address: "8 Ave NE", neighborhood: "Bridgeland", squaredFeet: "849.50", hasParkingGarage: "1", hasAccessiblePublicTransportation: "1" },
+    { idProperty: "3", idOwner: "2", name: "Southland Place", address: "7878 McLeod Dr", neighborhood: "Southland", squaredFeet: "3000.00", hasParkingGarage: "1", hasAccessiblePublicTransportation: "0" }
+]
 
-function changeUser(){
-    if (state == "not-authenticated"){
+let workspaces = [
+    { idWorkspace: "1", nameWorkspace: "Room 101", idProperty: "3", type: "Meeting Room", capacity: "12", isSmokeAllowed: "0", availableDate: "2023-07-01", leaseTermType: "Day", price: "100.00" },
+    { idWorkspace: "2", nameWorkspace: "Room 102", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "0", availableDate: "2023-07-01", leaseTermType: "Week", price: "500.00" },
+    { idWorkspace: "3", nameWorkspace: "Room 103", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "0", availableDate: "2023-11-01", leaseTermType: "Week", price: "485.00" },
+    { idWorkspace: "4", nameWorkspace: "Room 104", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "0", availableDate: "2023-06-01", leaseTermType: "Week", price: "490.00" },
+    { idWorkspace: "5", nameWorkspace: "Room 201", idProperty: "3", type: "Meeting Room", capacity: "12", isSmokeAllowed: "1", availableDate: "2023-06-01", leaseTermType: "Day", price: "100.00" },
+    { idWorkspace: "6", nameWorkspace: "Room 202", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-06-01", leaseTermType: "Week", price: "650.00" },
+    { idWorkspace: "7", nameWorkspace: "Room 203", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-06-01", leaseTermType: "Week", price: "480.00" },
+    { idWorkspace: "8", nameWorkspace: "Room 204", idProperty: "3", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-06-01", leaseTermType: "Week", price: "560.00" },
+    { idWorkspace: "9", nameWorkspace: "Workstation 21", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2023-07-15", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "10", nameWorkspace: "Workstation 22", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2023-07-15", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "11", nameWorkspace: "Workstation 23", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2023-07-15", leaseTermType: "Week", price: "125.00" },
+    { idWorkspace: "12", nameWorkspace: "Workstation 24", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2024-01-01", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "13", nameWorkspace: "Workstation 25", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2024-01-01", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "14", nameWorkspace: "Workstation 26", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2023-06-01", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "15", nameWorkspace: "Workstation 27", idProperty: "1", type: "Desktop", capacity: "1", isSmokeAllowed: "0", availableDate: "2024-01-01", leaseTermType: "Month", price: "125.00" },
+    { idWorkspace: "16", nameWorkspace: "Office Room 4", idProperty: "2", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-07-15", leaseTermType: "Month", price: "200.00" },
+    { idWorkspace: "17", nameWorkspace: "Office Room 5", idProperty: "2", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-10-09", leaseTermType: "Month", price: "200.00" },
+    { idWorkspace: "18", nameWorkspace: "Office Room 16", idProperty: "2", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-07-15", leaseTermType: "Week", price: "200.00" },
+    { idWorkspace: "19", nameWorkspace: "Office Room 20", idProperty: "2", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-10-01", leaseTermType: "Week", price: "200.00" },
+    { idWorkspace: "20", nameWorkspace: "Office Room 22", idProperty: "2", type: "Private Office Room", capacity: "4", isSmokeAllowed: "1", availableDate: "2023-10-01", leaseTermType: "Week", price: "200.00" }
+]
+
+function changeUser() {
+    if (state == "not-authenticated") {
         state = "renter-authenticated"
         $("#changeUser").text("renter-authenticated")
-    }else if (state == "renter-authenticated"){
+    } else if (state == "renter-authenticated") {
         state = "owner-authenticated"
         $("#changeUser").text("owner-authenticated")
-    }else if(state == "owner-authenticated"){
+    } else if (state == "owner-authenticated") {
         state = "admin-authenticated"
         $("#changeUser").text("admin-authenticated")
-    }else if(state == "admin-authenticated"){
+    } else if (state == "admin-authenticated") {
         state = "not-authenticated"
         $("#changeUser").text("not-authenticated")
     }
@@ -38,46 +130,254 @@ function changeUser(){
     updateAuthentication()
 }
 
-function logout(){
+function logout() {
     location.reload()
 }
 
-function goLogin(){
+function goLogin() {
     $(".login").fadeIn("slow")
     $(".signup").hide()
 }
 
-function goSignup(){
+function goSignup() {
     $(".login").hide()
     $(".signup").fadeIn("slow")
 }
 
-function clearsignup(){
+function clearsignup() {
     $("#newname").val("")
-    $("#newusername").val("")
+    $("#newemail").val("")
     $("#newpassword").val("")
     $("#newpasswordrepeated").val("")
 
 }
 
-function signup(){
-    let invalidUsername = false
-    users.forEach(element =>{
-        if(element.username == $("#newusername").val()){
-            invalidUsername = true
+function showWorkspaces() {
+    console.log("XXXXXXXXXXXXXXX");
+}
+
+
+function showListProperties() {
+    console.log("shw");
+    console.log("User Logged = ")
+    console.log(userLogged);
+    $("#filterProperties").html("")
+    
+    properties.forEach(element => {
+
+        if (element.idOwner == userLogged.idOwner) {
+            
+            let card = document.createElement("div")
+            card.className = "cardProperty"
+            card.id = "id" + element.idProperty
+            card.addEventListener("click", showWorkspaces)
+            let leftSide = document.createElement("div")
+            // leftSide.addEventListener("click", showWorkspaces(element.idProperty))
+            leftSide.className = "left-side-card"
+            leftSide.innerText = element.name
+            card.appendChild(leftSide)
+            let rightSide = document.createElement("div")
+            // rightSide.addEventListener("click", showWorkspaces(element.idProperty))
+            rightSide.className = "right-side-card"
+            rightSide.innerHTML = 'Address: ' + element.address + '<br>'
+            rightSide.innerHTML += 'Neighborhood: ' + element.neighborhood + '<br>'
+            rightSide.innerHTML += 'Squared Feet: ' + element.squaredFeet + '<br>'
+            rightSide.innerHTML += 'Parking Garage: ' + element.hasParkingGarage + '<br>'
+            rightSide.innerHTML += 'Public Transportation: ' + element.hasAccessiblePublicTransportation + '<br>'
+            card.appendChild(rightSide)
+            document.getElementById("filterProperties").appendChild(card)
+            let editProperty = document.createElement("div")
+            editProperty.id = "editProperty" + element.idProperty
+            editProperty.addEventListener("click", editProp)
+            editProperty.innerText = "Edit Property"
+            document.getElementById("filterProperties").appendChild(editProperty)
+        }
+    });
+    let addNewProperty = document.createElement("div")
+    addNewProperty.id = "addNewProperty"
+    addNewProperty.addEventListener("click", newProperty)
+    addNewProperty.innerText = "+ Add New Property"
+    document.getElementById("filterProperties").appendChild(addNewProperty)
+    
+    // let count = 0
+    // let listHtmlElement = '<select name="cars" id="cars">'
+    // properties.forEach(element => {
+        //     listHtmlElement += '<option value="'
+        //     listHtmlElement += element.idOwner
+    //     listHtmlElement += '">'
+    //     listHtmlElement += element.idOwner
+    //     listHtmlElement += '</option>'
+    // });
+    // listHtmlElement += '</select>'
+    // workspaces.forEach(element => {
+    //     if (element.idProperty ==  ) {
+
+    //     }
+    
+    // $("#filterProperties").html(listHtmlElement)
+    // });
+
+}
+
+function showWorkspaces() {
+    console.log("shw workspaces");
+    console.log("User Logged = ")
+    console.log(userLogged);
+    console.log(this);
+    idCaptured = this.id.substring(2)
+    $("#filterProperties").html("")
+
+    workspaces.forEach(element => {
+        
+        if (element.idProperty == idCaptured) {
+
+            let card = document.createElement("div")
+            card.className = "cardProperty"
+            //         card.addEventListener("click", showWorkspaces)
+            let leftSide = document.createElement("div")
+            // leftSide.addEventListener("click", showWorkspaces(element.idProperty))
+            leftSide.className = "left-side-card"
+            leftSide.innerText = element.nameWorkspace
+            card.appendChild(leftSide)
+            let rightSide = document.createElement("div")
+            // rightSide.addEventListener("click", showWorkspaces(element.idProperty))
+            rightSide.className = "right-side-card"
+            rightSide.innerHTML = 'Type: ' + element.type + '<br>'
+            rightSide.innerHTML += 'Lease Term: ' + element.leaseTermType + '<br>'
+            rightSide.innerHTML += 'Capacity: ' + element.capacity + '<br>'
+            rightSide.innerHTML += 'Available Date: ' + element.availableDate + '<br>'
+            rightSide.innerHTML += 'Smoke Allowed: ' + element.isSmokeAllowed + '<br>'
+            card.appendChild(rightSide)
+            document.getElementById("filterProperties").appendChild(card)
+        
+    
+             let editWorkspace = document.createElement("div")
+             editWorkspace.id = "editProperty" + element.idProperty
+             editWorkspace.addEventListener("click", editWorksp)
+             editWorkspace.innerText = "Edit Workspace"
+             document.getElementById("filterProperties").appendChild(editWorkspace)
+         }
+     });
+    //     let addNewProperty = document.createElement("div")
+    //     addNewProperty.id = "addNewProperty"
+    //     addNewProperty.addEventListener("click", newProperty)
+    //     addNewProperty.innerText = "+ Add New Property"
+    //     document.getElementById("filterProperties").appendChild(addNewProperty)
+
+    //     // let count = 0
+    // // let listHtmlElement = '<select name="cars" id="cars">'
+    // // properties.forEach(element => {
+    // //     listHtmlElement += '<option value="'
+    // //     listHtmlElement += element.idOwner
+    // //     listHtmlElement += '">'
+    // //     listHtmlElement += element.idOwner
+    // //     listHtmlElement += '</option>'
+    // // });
+    // // listHtmlElement += '</select>'
+    // // workspaces.forEach(element => {
+    //     //     if (element.idProperty ==  ) {
+
+    //         //     }
+
+    //         // $("#filterProperties").html(listHtmlElement)
+    //         // });
+
+}
+
+function editWorksp(){
+    console.log("EditWs")
+}
+
+function editProp() {
+    $(".listProperties").fadeOut("slow")
+    $(".editProperty").fadeIn("slow")
+    idCaptured = this.id.substring(12)
+    console.log(idCaptured)
+
+    properties.forEach(element => {
+        if (element.idProperty == idCaptured) {
+            $("#idPropertyEdit").val(element.idProperty)
+            $("#idOwnerEdit").val(element.idOwner)
+            $("#propertyNameEdit").val(element.name)
+            $("#propertyAddressEdit").val(element.address)
+            $("#propertyNeighborhoodEdit").val(element.neighborhood)
+            $("#propertySqFtEdit").val(element.squaredFeet),
+                $("#hasParkingGarageEdit").val(element.hasParkingGarage),
+                $("#hasAccessiblePublicTransportationEdit").val(element.hasAccessiblePublicTransportation)
+        }
+    });
+
+    // })
+    console.log(this)
+}
+
+function EditPropertyButton() {
+
+    properties.forEach(element => {
+        if (element.idProperty == idCaptured) {
+            element.idProperty = $("#idPropertyEdit").val()
+            element.idOwner = $("#idOwnerEdit").val()
+            element.name = $("#propertyNameEdit").val()
+            element.address = $("#propertyAddressEdit").val()
+            element.neighborhood = $("#propertyNeighborhoodEdit").val()
+            element.squaredFeet = $("#propertySqFtEdit").val()
+            element.hasParkingGarage = $("#hasParkingGarageEdit").val()
+            element.hasAccessiblePublicTransportation = $("#hasAccessiblePublicTransportationEdit").val()
+        }
+    });
+    console.log(properties)
+
+
+    $(".editProperty").hide()
+    showListProperties()
+    $(".listProperties").fadeIn("slow")
+}
+
+function newProperty() {
+    console.log("addNewProperty");
+    $(".listProperties").fadeOut("slow")
+    $(".newProperty").fadeIn("slow")
+
+
+}
+
+function addNewProperty() {
+    properties.push({
+        idProperty: $("#idProperty").val(),
+        idOwner: $("#idOwner").val(),
+        name: $("#propertyName").val(),
+        address: $("#propertyAddress").val(),
+        neighborhood: $("#propertyNeighborhood").val(),
+        squaredFeet: $("#propertySqFt").val(),
+        hasParkingGarage: $("#hasParkingGarage").val(),
+        hasAccessiblePublicTransportation: $("#hasAccessiblePublicTransportation").val()
+    })
+    console.log(properties);
+
+    $(".newProperty").hide()
+    showListProperties()
+    $(".listProperties").fadeIn("slow")
+}
+
+function signup() {
+    let invalidemail = false
+    users.forEach(element => {
+        if (element.email == $("#newemail").val()) {
+            invalidemail = true
         }
     })
-    if (invalidUsername || $("#newusername").val()=="" || $("#newusername").val().length <3 ) {
-        showMessage("Invalid Username")
+    if (invalidemail || $("#newemail").val() == "" || $("#newemail").val().length < 3) {
+        showMessage("Invalid email")
         clearsignup()
         return
     }
 
-    if(invalidUsername == false && $("#newpassword").val() == $("#newpasswordrepeated").val() ){
-        users.push({name: $("#newname").val(),
-        username: $("#newusername").val(),
-        password: $("#newpassword").val(),
-        type: $("#type-user").val()
+    if (invalidemail == false && $("#newpassword").val() == $("#newpasswordrepeated").val()) {
+        users.push({
+            name: $("#newname").val(),
+            email: $("#newemail").val(),
+            password: $("#newpassword").val(),
+            type: $("#type-user").val()
         })
         showMessage("User successfully created")
         clearsignup()
@@ -87,56 +387,57 @@ function signup(){
     }
 }
 
-function login(){
+function login() {
     users.forEach(element => {
         // console.log("Name : "+ element.name);
         // console.log("Password : "+ element.password);
-        // console.log($("#loginUsername").val());
+        // console.log($("#loginemail").val());
         // console.log($("#loginPassword").val());
-        
-        if(element.username == $("#loginUsername").val() &&
-        element.password == $("#loginPassword").val()){
+
+        if (element.email == $("#loginemail").val() &&
+            element.password == $("#loginPassword").val()) {
             userLogged = element
             console.log("Login successful");
-            $("#loginUsername").val("")
+            $("#loginemail").val("")
             $("#loginPassword").val("")
             $(".login").fadeOut("slow")
-            if(userLogged.type == "owner"){
+            if (userLogged.type == "owner") {
                 state = "owner-authenticated"
-            }else if(userLogged.type == "renter"){
+            } else if (userLogged.type == "renter") {
                 state = "renter-authenticated"
-            }else if(userLogged.type == "admin"){
+            } else if (userLogged.type == "admin") {
                 state = "admin-authenticated"
-            } 
-            showMessage("Login Successful")   
+            }
+            showMessage("Login Successful")
             $("#msgLogin").css("color", "green")
             $("#msgLogin").text("Login Successful!")
             showMessage("Login Successful")
             updateAuthentication()
-            
+
         }
-        if (state == "not-authenticated"){
+        if (state == "not-authenticated") {
             showMessage("Login Failed. Try again.")
             $("#msgLogin").text("Login Failed!")
         }
 
-        
+
     });
 }
 
-function showMessage(msg){
+function showMessage(msg) {
     $("#alert-message").text(msg)
     $("#alert-message").fadeIn("slow")
-    setTimeout(() => {$("#alert-message").fadeOut("slow")
-        
+    setTimeout(() => {
+        $("#alert-message").fadeOut("slow")
+
     }, 3000);
 
 
 }
 
-function updateAuthentication(){
+function updateAuthentication() {
     $("#alert-message").hide()
-    if (state == "not-authenticated"){
+    if (state == "not-authenticated") {
         $(".welcome").hide()
         $(".login").hide()
         $(".signup").hide()
@@ -144,54 +445,55 @@ function updateAuthentication(){
         $(".owner-authenticated").hide()
         $(".renter-authenticated").hide()
         $(".admin-authenticated").hide()
-    }else if (state == "renter-authenticated"){
-        $("#welcome-message").html("Welcome " + userLogged.name + " !")
+    } else if (state == "renter-authenticated") {
+        $("#welcome-message").html("Welcome, " + userLogged.name + " !")
         $(".welcome").fadeIn("slow")
         $(".not-authenticated").hide()
         $(".owner-authenticated").hide()
         $(".renter-authenticated").show()
         $(".admin-authenticated").hide()
-    }else if (state == "owner-authenticated"){
-        $("#welcome-message").html("Welcome " + userLogged.name +" !")
+    } else if (state == "owner-authenticated") {
+        $("#welcome-message").html("Welcome, " + userLogged.name + " !")
         $(".welcome").fadeIn("slow")
         $(".not-authenticated").hide()
         $(".owner-authenticated").show()
         $(".renter-authenticated").hide()
         $(".admin-authenticated").hide()
-    }else if (state == "admin-authenticated"){
-        $("#welcome-message").html("Welcome " + userLogged.name +" !")
+    } else if (state == "admin-authenticated") {
+        $("#welcome-message").html("Welcome, " + userLogged.name + " !")
         $(".welcome").fadeIn("slow")
         $(".not-authenticated").hide()
         $(".owner-authenticated").show()
         $(".user-authenticated").show()
         $(".admin-authenticated").show()
-    }   
+    }
+    console.log("User Logged = ")
     console.log(userLogged);
 }
 
-function authenticatingSignUp(){
+function authenticatingSignUp() {
 
 }
 
-console.log(users)
+//console.log(users)
 
-function changeColor(){
+function changeColor() {
     console.log("Changing colors");
-    if (colorSchema == 0){
-    $(".not-authenticated").hide()
-    colorSchema = 1
-    $(":root").css("--color1", "#478559")
-    $(":root").css("--color2", "#161748")
-    $(":root").css("--color3", "#f95d9b")
-    $(":root").css("--color4", "#39a0ca")
-}else {
-    $(".not-authenticated").show()
-    colorSchema = 0
-    $(":root").css("--color1", "#AFD5EB")
-    $(":root").css("--color2", "#F04520")
-    $(":root").css("--color3", "#EF869C")
-    $(":root").css("--color4", "#1073E5")
-}
+    if (colorSchema == 0) {
+        $(".not-authenticated").hide()
+        colorSchema = 1
+        $(":root").css("--color1", "#478559")
+        $(":root").css("--color2", "#161748")
+        $(":root").css("--color3", "#f95d9b")
+        $(":root").css("--color4", "#39a0ca")
+    } else {
+        $(".not-authenticated").show()
+        colorSchema = 0
+        $(":root").css("--color1", "#AFD5EB")
+        $(":root").css("--color2", "#F04520")
+        $(":root").css("--color3", "#EF869C")
+        $(":root").css("--color4", "#1073E5")
+    }
 
 }
 
@@ -337,7 +639,7 @@ function changeColor(){
 //       //  if (Math.floor(Math.random() * 2) == 0) {
 // //    turn = player1
 // // }
-// // else 
+// // else
 //         // turn = player2 }
 //         // showMessage("Choosing 1st Player")
 //      // hideMessage()
@@ -511,16 +813,16 @@ function changeColor(){
 //             return
 //         }
 //         if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O"){
-//            winner("O") 
+//            winner("O")
 //             $("#winner-line").css("margin-top", "0");
 //             $("#winner-line").css("margin-left", "63vw");
 //             $("#winner-line").css("width", "6px");
 //             $("#winner-line").css("height", "79vw");
 //             $("#winner-line").fadeIn();
 //             return
-            
+
 //         }
-//         if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O"){           
+//         if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O"){
 //             winner("O")
 //             $("#winner-line").css("margin-top", "20px");
 //             $("#winner-line").css("margin-left", "37vw");
@@ -531,7 +833,7 @@ function changeColor(){
 //             return
 //         }
 //         if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
-//            winner("O") 
+//            winner("O")
 //             $("#winner-line").css("margin-top", "20px");
 //             $("#winner-line").css("margin-left", "37vw");
 //             $("#winner-line").css("width", "6px");
@@ -583,9 +885,9 @@ function changeColor(){
 //             $("#winner-line").css("height", "79vw");
 //             $("#winner-line").fadeIn();
 //             return
-            
+
 //         }
-//         if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X"){           
+//         if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X"){
 //             winner("X")
 //             $("#winner-line").css("margin-top", "20px");
 //             $("#winner-line").css("margin-left", "37vw");
