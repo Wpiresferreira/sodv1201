@@ -1,0 +1,179 @@
+<!--
+* @name: Assignement2
+* @Course Code: SODV1201
+* @class: Software Development Diploma program.
+* @author: Wagner Pires Ferreira.
+* @Student ID : 446347
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary Weather</title>
+</head>
+
+<body>
+    <div style="border: 2px; border-style: solid; border-radius: 8px;font-family: 'Lucida Sans', sans-serif;;max-width: 364px;padding: 20px;margin: 10px">
+        <h1>Calgary Weather Now</h1>
+        <div id="imgElement">
+        </div>
+        <div id="msg1">
+        </div>
+        <div id="msg2">
+        </div>
+        <div id="msg3">
+        </div>
+        <div id="msg4">
+        </div>
+    </div>
+    <div style="border: 2px; border-style: solid; border-radius: 8px;font-family: 'Lucida Sans', sans-serif;max-width: 364px;padding: 20px;margin: 10px;">
+        <h1>Recife Weather Now</h1>
+        <div id="imgElement1">
+        </div>
+        <div id="msg5">
+        </div>
+        <div id="msg6">
+        </div>
+        <div id="msg7">
+        </div>
+        <div id="msg8">
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+    async function getCalgary() {
+        const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=51.049999%2C-114.06666';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '6fa6d44963mshcf6eb887528eb62p1186f7jsn2b7638536b64',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            //	console.log(result);
+            obj = JSON.parse(result);
+            console.log(obj);
+
+            document.getElementById("msg1").innerText = "Temperature: " + obj.current.temp_c + "°C"
+            document.getElementById("msg2").innerText = "Feels Like: " + obj.current.feelslike_c + "°C"
+            document.getElementById("msg3").innerText = "Humidity : " + obj.current.humidity + "%"
+            document.getElementById("msg4").innerText = "Local Time : " + (obj.location.localtime).substring(11)
+            document.getElementById("imgElement").innerHTML = '<img src="' + obj.current.condition.icon + '">'
+            // 	 console.log(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    async function getRecife() {
+        const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=-8.046660%2C-34.877100';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '6fa6d44963mshcf6eb887528eb62p1186f7jsn2b7638536b64',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            //	console.log(result);
+            obj = JSON.parse(result);
+            console.log(obj);
+
+            document.getElementById("msg5").innerText = "Temperature: " + obj.current.temp_c + "°C"
+            document.getElementById("msg6").innerText = "Feels Like: " + obj.current.feelslike_c + "°C"
+            document.getElementById("msg7").innerText = "Humidity : " + obj.current.humidity + "%"
+            document.getElementById("msg8").innerText = "Local Time : " + (obj.location.localtime).substring(11)
+            document.getElementById("imgElement1").innerHTML = '<img src="' + obj.current.condition.icon + '">'
+            // 	 console.log(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    getCalgary()
+    getRecife()
+
+// let test = {
+//     "location":{
+//         "name":"Boston",
+//         "region":"Lincolnshire",
+//         "country":"United Kingdom",
+//         "lat":53.1,
+//         "lon":-0.13,
+//         "tz_id":"Europe/London",
+//         "localtime_epoch":1690480466,
+//         "localtime":"2023-07-27 18:54"
+//     },
+//     "current":{
+//         "last_updated_epoch":1690479900,
+//         "last_updated":"2023-07-27 18:45",
+//         "temp_c":23.0,
+//         "temp_f":73.4,
+//         "is_day":1,
+//         "condition":{
+//             "text":"Partly cloudy",
+//             "icon":"//cdn.weatherapi.com/weather/64x64/day/116.png",
+//             "code":1003
+//         },
+//             "wind_mph":12.5,
+//             "wind_kph":20.2,
+//             "wind_degree":290,
+//             "wind_dir":"WNW",
+//             "pressure_mb":1000.0,
+//             "pressure_in":29.53,
+//             "precip_mm":2.1,
+//             "precip_in":0.08,
+//             "humidity":65,
+//             "cloud":75,
+//             "feelslike_c":25.0,
+//             "feelslike_f":77.0,
+//             "vis_km":10.0,
+//             "vis_miles":6.0,
+//             "uv":5.0,
+//             "gust_mph":14.5,
+//             "gust_kph":23.4
+//         }
+//     }
+
+// getExample()
+
+// const settings = {
+// 	async: true,
+// 	crossDomain: true,
+// 	url: 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13',
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '6fa6d44963mshcf6eb887528eb62p1186f7jsn2b7638536b64',
+// 		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+// 	}
+// };
+
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+// });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</html>
