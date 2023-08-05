@@ -15,13 +15,13 @@
     <title>Weather API</title>
 </head>
 
-<body style="font-family: 'Lucida Sans', sans-serif; background-color: rgb(174, 250, 255);">
+<body style="font-family: 'Lucida Sans', sans-serif; background-image: linear-gradient(to bottom right, blue, rgb(174, 250, 255));height: 100vh;color: rgb(0, 0, 82);">
 
-    <h1 style="text-align: center;">Weather conditions</h1>
+    <h1 style="text-align: center; padding: 8vh;">Weather conditions</h1>
     <label style="text-align: center; margin: 30px;" for="cities">Choose a city:</label>
 
 
-    <select name="cities" id="cities" onchange="update()">
+    <select style="padding: 1vh;margin: 2vh" name="cities" id="cities" onchange="update()">
         <option value="current">Current location</option>
         <option value="Calgary">Calgary</option>
         <option value="Vancouver">Vancouver</option>
