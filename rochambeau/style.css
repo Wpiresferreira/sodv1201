@@ -1,0 +1,148 @@
+@font-face {
+    font-family: Score;
+    src: url(ScoreBoardSt-DX5d.ttf);
+}
+:root {
+    --color1: #AFD5EB;
+    --color2: #F04520;
+    --color3: #EF869C;
+    --color4: #1073E5;
+    --color5: #144a88;
+
+}
+
+* {
+    background-color: var(--color5);
+    font-family: 'Poppins';
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    font-family: Score;
+
+}
+header{
+    font-size: 10vw;
+    text-align: center;
+    color: var(--color1);
+    padding: 4vh 0;
+}
+#score{
+    display: flex;
+ font-size: large;   
+ justify-content: space-around;
+ background-color: black;
+ color: red;
+ border-color: #144a88;
+ border-radius: 14px;
+ border-style: solid;
+ border-width: 4px;
+}
+
+
+#vs{
+    color: var(--color1);
+    padding: 8vh 1vh;
+    font-size: xx-large;
+}
+.player{
+    background-color: inherit;
+}
+
+.side{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: inherit;
+}
+.number{
+    font-size: 36px;
+}
+
+#message{
+    position: fixed;
+    margin-top: 20vh;
+    margin-left: 10vw;
+    width: 80vw;
+    /* height: 20vh; */
+    background-color: #AFD5EB;
+    color: #144a88;
+    border-color: #144a88;
+    border-radius: 14px;
+    border-style: solid;
+    border-width: 4px;
+    text-align: center;
+    padding: 8vh 0;
+    font-size: 4vh;
+}
+
+.name-player{
+    background-color: inherit;
+}
+.chose{
+    height: 20vh;
+    width: 35vw;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--color1);
+    background-color: #4cc9f0;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--color5);
+}
+#battle{
+    display: flex;
+    justify-content: center ;
+
+}
+.title{
+    color: var(--color1);
+    text-align: center;
+}
+
+#player-final{
+    background-color: inherit;
+    width: auto;
+    height: 75%;
+}
+#computer-final{
+    background-color: inherit;
+    width: auto;
+    height: 75%;
+}
+
+#player-board{
+    height: 25vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+#computer-board{
+    height: 25vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+img{
+    width: auto;
+    height: 100%;
+    background-color: inherit;
+}
+
+.player-options:hover{
+    background-color: #4cc9f0;
+    -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    border-radius: 12px;
+}
+
+.selected{
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--color1);
+    background-color: #4cc9f0;
+    -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+    border-radius: 12px;
+}
+
+

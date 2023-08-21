@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rochambeau</title>
+</head>
+
+<body>
+    <header>
+        <div>Rochambeau <br> Game</div>
+    </header>
+    <main>
+        <div id="score">
+            <div class="side">
+                <div class="player">
+                    Player
+                </div>
+                <div class="number player" id="player-score">
+        
+                </div>
+            </div>
+            <div class="side">
+        
+                <div class="player">
+                    Computer
+                </div>
+                <div class="number player" id="computer-score">
+        
+                </div>
+            </div>
+        </div>
+        <div id='message'>
+        </div>
+        
+                <div class="title">
+                    Computer
+                </div>
+        <div id='computer-board'>
+            <img src="rock.png" alt="">
+        </div>
+        <div id="battle">
+            <div class="chose" id="player-chose">
+                <div class="name-player">
+                    Player
+                </div>
+                <div id="player-final">
+
+                </div>
+            </div>
+            <div id="vs">
+                x
+            </div>
+            <div class="chose" id="computer-chose">
+                
+                <div class="name-player">
+                    Computer
+                </div>
+                <div id="computer-final">
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="title">
+            Choose your hand
+        </div>
+
+        <div id='player-board'>
+            <img src="rock.png" class="player-options" onclick="select('rock')" id="rock" alt="">
+            <img src="paper.png" class="player-options" onclick="select('paper')" id="paper" alt="">
+            <img src="scissors.png" class="player-options" onclick="select('scissors')" id="scissors" alt="">
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+
+</script>
+
+</html>
