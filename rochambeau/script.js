@@ -20,16 +20,16 @@ function select(p) {
     var interval3
 
     interval1 = setInterval(function () {
-        $("#computer-board").html("<img src='rock.png' >")
+        $("#computer-final").html("<img src='rock.png' >")
     }, 600);
     setTimeout(function () {
         interval2 = setInterval(() => {
-            $("#computer-board").html("<img src='paper.png' >")
+            $("#computer-final").html("<img src='paper.png' >")
         }, 600);
     }, 200);
     setTimeout(function () {
         interval3 = setInterval(() => {
-            $("#computer-board").html("<img src='scissors.png' >")
+            $("#computer-final").html("<img src='scissors.png' >")
         }, 600);
     }, 400);
 
@@ -45,18 +45,18 @@ function select(p) {
         switch (rand) {
             case 0:
                 computerSelect = 'rock'
-                $("#computer-board").html("<img src='rock.png' >")
+                $("#computer-final").html("<img src='rock.png' >")
 
                 break;
 
             case 1:
                 computerSelect = 'paper'
-                $("#computer-board").html("<img src='paper.png' >")
+                $("#computer-final").html("<img src='paper.png' >")
                 break;
 
             case 2:
                 computerSelect = 'scissors'
-                $("#computer-board").html("<img src='scissors.png' >")
+                $("#computer-final").html("<img src='scissors.png' >")
                 break;
 
             default:
