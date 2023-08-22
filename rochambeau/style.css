@@ -21,7 +21,7 @@
 
 }
 header{
-    font-size: 10vw;
+    font-size: 44px;
     text-align: center;
     color: var(--color1);
     padding-top: 4vh;
@@ -126,6 +126,7 @@ header{
 img{
     width: auto;
     height: 100%;
+    max-height: 90px;
     background-color: inherit;
 }
 
