@@ -71,17 +71,21 @@ main {
 
 #winner-line{
     position: fixed;
+    display: none;
     margin-top: 13vw;
     width: 77vw;
-    height: 6px;
+    height: 6px;    
     background-color: red;
 }
 
 #alertMessage{
     display:none;
     position:fixed ;
-    padding: 60px 0px;
-    background-color: red;
+    margin-top: 250px;
+    margin-left: 110px;
+    padding: 20px;
+    background-color:#8fdfff;
+    color: #25274D;
 
 }
 #letter {

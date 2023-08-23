@@ -23,11 +23,12 @@ start()
 
 
 $("#start").click(function () {
-    location.reload()
+    // location.reload()
     start()
 });
 
 function start() {
+    initializeBoard()   
     $("#winner-line").hide();
     $("#player1Name").text(player1.name)
     $("#player1Token").text(player1.token)
@@ -36,27 +37,26 @@ function start() {
     showMessage("Sorting who wil begin")
     if (Math.floor(Math.random() * 2) == 0) {
         turn = player1
-    }
-    else
+        showMessage("Player1 will start")
+    }else {
         turn = player2
+        showMessage(player2.name + " will start")
+
+    }
+
+    hasWinner = ""
+
+    $("#winner").text("")
+
+    initializeBoard()
+    updateBoard()
+    turnMessage()
+    if (turn.token == "O" && mode == "1player") {
+        processing = true
+        setTimeout(computerMark, 5000)
+    }
+
 }
-// hideMessage()
-//setTimeout(showMessage(turn.name + " will start."), 100000)
-// hideMessage()
-
-hasWinner = ""
-
-//        $("#winner").text("")
-
-initializeBoard()
-updateBoard()
-turnMessage()
-if (turn.token == "O" && mode == "1player") {
-    processing = true
-    setTimeout(computerMark, 5000)
-}
-
-
 function showMessage(msg) {
     $("#alertMessage").text(msg)
     $("#alertMessage").fadeIn()
@@ -80,20 +80,20 @@ function hideMessage() {
 //     }
 
 
-   $("#1PlayerMode").click(function () {
- mode = "1player"
-player2.name = "Computer"
-$("#1PlayerMode").hide()
-$("#2PlayerMode").show()
-start()
+$("#1PlayerMode").click(function () {
+    mode = "1player"
+    player2.name = "Computer"
+    $("#1PlayerMode").hide()
+    $("#2PlayerMode").show()
+    start()
 })
 
 $("#2PlayerMode").click(function () {
-mode = "2player"
-player2.name = "Player 2"
-$("#2PlayerMode").hide()
-$("#1PlayerMode").show()
-start()
+    mode = "2player"
+    player2.name = "Player 2"
+    $("#2PlayerMode").hide()
+    $("#1PlayerMode").show()
+    start()
 })
 
 $(".cell").click(function () {
@@ -123,6 +123,7 @@ function mark(n) {
     }
 
     if (turn.token == "O" && mode == "1player") {
+        processing = true
         setTimeout(computerMark, 3000)
     }
 }
