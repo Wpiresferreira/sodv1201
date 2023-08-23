@@ -11,6 +11,13 @@
     align-items: center;
 }
 
+#player1Token{
+    font-family: PermanentMarker;
+}
+#player2Token{
+    font-family: PermanentMarker;
+}
+
 #animated {
     position: absolute;
     background-color: beige;
