@@ -28,8 +28,9 @@ $("#start").click(function () {
 });
 
 function start() {
-    initializeBoard()   
-    $("#winner-line").hide();
+    initializeBoard()
+    movements = 0
+    $("#winner-line").hide()
     $("#player1Name").text(player1.name)
     $("#player1Token").text(player1.token)
     $("#player2Name").text(player2.name)
