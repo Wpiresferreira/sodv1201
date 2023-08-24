@@ -284,7 +284,16 @@ function computerMark() {
         } else if (movements == 1 && board[1][1] != "") {
             row = 0
             col = 0
-        } else {
+        } else if(movements== 3 && ((board[0][0] == "X" && board[2][2] == "X") || (board[0][2] == "X" && board[2][0] == "X")) ){
+            if (board[0][1] == "" ){
+                row = 0
+                col = 1
+            }else if(board[1][0] == ""){
+                row = 1
+                col = 0
+            }
+        }
+        else {
 
             for (let row = 0; row <= 2; row++) {
                 for (let col = 0; col <= 2; col++) {
