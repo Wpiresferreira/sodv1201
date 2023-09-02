@@ -278,6 +278,8 @@ function computerMark() {
         let possibles = []
         let index = 0
 
+        
+
         if (movements == 0 || (movements == 1 && board[1][1] == "")) {
             row = 1
             col = 1
