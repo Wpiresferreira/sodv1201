@@ -7,26 +7,35 @@ let monsters = ["img/angrymonster.png",
 ]
 let points = 0
 
+$("#points").text(points)
 
 
-for (let index=0; index<10; index++){
-} 
+
 
 let timeOut = setInterval(() => {
     test()
-}, 1000); 
+}, 2000); 
 
 function test(){
-    
+    let scored = false
     let sorted = Math.floor(Math.random() * 6 ) + 1;
     let sortedMonster = Math.floor(Math.random() * 5 );
     console.log(sorted)
+    console.log(monsters[sortedMonster])
+    
     $("#monster" + sorted).click(function(){
-        $(this).html('<img src="img/hitedmonster1.png" alt="" srcset="">')
+        if (scored){
+        }else{
+            $(this).html('<img src="img/hitedmonster1.png" alt="" srcset="">')
+            points +=1
+            scored = true
+            $("#points").text(points)
+        }
+
     });
+
     $("#monster" + sorted).html('<img src="'+ monsters[sortedMonster] + '" alt="" srcset="">')
     
-    console.log(monsters[sortedMonster])
 
     $("#monster" + sorted).animate({marginTop: "0px"});
     let wait = setTimeout(() => {
