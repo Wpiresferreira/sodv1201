@@ -7,7 +7,7 @@ let monsters = ["img/angrymonster.png",
 ]
 let points = 0
 
-$("#points").text(points)
+$("#points").text("Points: " +points)
 
 let positions =[
 {pos:1, left: "8vw", topShow: "18vh", topHidden: "30vh", z:10},
@@ -22,28 +22,34 @@ let positions =[
 ]
 
 // for (let i = 0; i<20; i++){
-
-//     let timeOut = setTimeout(() => {
-//         test()
-//     }, 3000*(i+1)); 
-// }
-
-
-
-
-setInterval(() => {
+    
+    //     let timeOut = setTimeout(() => {
+        //         test()
+        //     }, 3000*(i+1)); 
+        // }
+        
+        
+        
+        
+        setInterval(() => {
     test()
 }, 3000);
 function test(){
-
-    let aleat =  0
-    // Math.floor(Math.random()*9)
+    let scored = false
+    
+    let aleat =  Math.floor(Math.random()*9)
     let aleatM = Math.floor(Math.random()*6)
     console.log(aleat +1)
     // document.getElementById("monster1").style.left = 
     $("#monster1").click(function(){
-        $("#monster1").attr("src", "img/hitedmonster1.png")
-        console.log("CLICKED")
+        
+        if(!scored){
+            $("#monster1").attr("src", "img/hitedmonster1.png")
+            console.log("CLICKED")
+            points+=1
+            $("#points").text("Points: " +points)
+            scored = true
+        }
     })
     $("#monster1").attr("src", monsters[aleatM]);
     $("#monster1").css({"left":positions[aleat].left});
