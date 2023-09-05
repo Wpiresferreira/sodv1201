@@ -2,7 +2,7 @@ let monsters = ["img/angrymonster.png",
 "img/angrymonster1.png",
 "img/scaredmonster.webp",
 "img/smilemonster.png",
-"img/sadmonster.webp",
+"img/sadmonster.png",
 "img/sickmonster.webp",
 ]
 let points = 0
@@ -10,15 +10,15 @@ let points = 0
 $("#points").text(points)
 
 let positions =[
-{pos:1, left:"3vh", topShow: "20vh", topHidden: "30vh", z:10},
-{pos:2, left:"19vh", topShow: "20vh", topHidden: "30vh", z:10},
-{pos:3, left:"35vh", topShow: "20vh", topHidden: "30vh", z:10},
-{pos:4, left:"3vh", topShow: "35vh", topHidden: "45vh", z:30},
-{pos:5, left:"19vh", topShow: "35vh", topHidden: "45vh", z:30},
-{pos:6, left:"35vh", topShow: "35vh", topHidden: "45vh", z:30},
-{pos:7, left:"3vh", topShow: "50vh", topHidden: "60vh", z:50},
-{pos:8, left:"19vh", topShow: "50vh", topHidden: "60vh", z:50},
-{pos:9, left:"35vh", topShow: "50vh", topHidden: "60vh", z:50}
+{pos:1, left: "8vw", topShow: "18vh", topHidden: "30vh", z:10},
+{pos:2, left:"42vw", topShow: "18vh", topHidden: "30vh", z:10},
+{pos:3, left:"75.5vw", topShow: "18vh", topHidden: "30vh", z:10},
+{pos:4, left:"8vw", topShow: "33.5vh", topHidden: "45vh", z:30},
+{pos:5, left:"42vw", topShow: "33.5vh", topHidden: "45vh", z:30},
+{pos:6, left:"75.5vw", topShow: "33.5vh", topHidden: "45vh", z:30},
+{pos:7, left:"8vw", topShow: "48.2vh", topHidden: "60vh", z:50},
+{pos:8, left:"42vw", topShow: "48.2vh", topHidden: "60vh", z:50},
+{pos:9, left:"75.5vw", topShow: "48.2vh", topHidden: "60vh", z:50}
 ]
 
 // for (let i = 0; i<20; i++){
@@ -37,7 +37,8 @@ setInterval(() => {
 function test(){
 
     let aleat =  Math.floor(Math.random()*9)
-    let aleatM = Math.floor(Math.random()*6)
+    let aleatM = 1
+    // Math.floor(Math.random()*6)
     console.log(aleat +1)
     // document.getElementById("monster1").style.left = 
     $("#monster1").click(function(){
@@ -56,7 +57,7 @@ function test(){
             
         }, 500);
         
-    }, 2000);
+    }, 1500);
     
 }
 function test1(){
