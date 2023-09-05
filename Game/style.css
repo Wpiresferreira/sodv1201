@@ -9,7 +9,7 @@
     top:20vh
 }
 .img1{
- 
+    pointer-events:none; 
     width: 100%;
     position: fixed;
     top: 25vh;
@@ -17,6 +17,7 @@
     z-index: 0;
 }
 .img2{
+    pointer-events:none;
     width: 100%;
     position: fixed;
     z-index: 20;
@@ -24,7 +25,7 @@
     left: 0;
 }
 .img3{
- 
+    pointer-events:none;
     width: 100%;
     position: fixed;
     top: 40vh;
@@ -32,6 +33,7 @@
     z-index: 20;
 }
 .img4   {
+    pointer-events:none;
     width: 100%;
     position: fixed;
     z-index: 40;
@@ -39,7 +41,7 @@
     left: 0;
 }
 .img5{
- 
+    pointer-events:none; 
     width: 100%;
     position: fixed;
     top: 55vh;
@@ -47,6 +49,7 @@
     z-index: 40;
 }
 .img6   {
+    pointer-events:none;
     width: 100%;
     position: fixed;
     z-index: 60;
@@ -54,6 +57,7 @@
     left: 0;
 }
 .img7   {
+    pointer-events:none;
     width: 100%;
     position: fixed;
     z-index: 60;

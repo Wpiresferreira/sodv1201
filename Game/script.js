@@ -36,9 +36,9 @@ setInterval(() => {
 }, 3000);
 function test(){
 
-    let aleat =  Math.floor(Math.random()*9)
-    let aleatM = 1
-    // Math.floor(Math.random()*6)
+    let aleat =  0
+    // Math.floor(Math.random()*9)
+    let aleatM = Math.floor(Math.random()*6)
     console.log(aleat +1)
     // document.getElementById("monster1").style.left = 
     $("#monster1").click(function(){
