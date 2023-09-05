@@ -1,17 +1,73 @@
-#board{
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px;
-}
-img{
-    width: 70%;
-}
-.cell{
-    max-width: 100px;
-    max-height: 100px;
-    overflow: hidden;
-    margin-top: 100px;
-}
-#monster1{
 
+
+#monster1{
+    margin-top: 80px;
+    max-width: 60px;
+    position: fixed;
+    z-index: 10;
+    left: 10vh;
+    top:20vh
+}
+.img1{
+ 
+    width: 100%;
+    position: fixed;
+    top: 25vh;
+    left: 0;
+    z-index: 0;
+}
+.img2{
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    top: 24.8vh;
+    left: 0;
+}
+.img3{
+ 
+    width: 100%;
+    position: fixed;
+    top: 40vh;
+    left: 0;
+    z-index: 20;
+}
+.img4   {
+    width: 100%;
+    position: fixed;
+    z-index: 40;
+    top: 39.8vh;
+    left: 0;
+}
+.img5{
+ 
+    width: 100%;
+    position: fixed;
+    top: 55vh;
+    left: 0;
+    z-index: 40;
+}
+.img6   {
+    width: 100%;
+    position: fixed;
+    z-index: 60;
+    top: 54.8vh;
+    left: 0;
+}
+.img7   {
+    width: 100%;
+    position: fixed;
+    z-index: 60;
+    top: 70vh;
+    left: 0;
+}
+
+
+.cell{
+    max-width: 30vw;
+    max-height: 30vw;
+    overflow: hidden;
+}
+button{
+    position: relative;
+    z-index: 100;
 }
