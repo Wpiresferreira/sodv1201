@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/liststaff.html"
+    "livePreview.defaultPreviewPath": "/liststaff.html",
+    "liveServer.settings.port": 5501
 }

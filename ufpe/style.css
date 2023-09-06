@@ -1,0 +1,41 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color : darkblue
+}
+#grade{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    
+}
+.box{
+    margin: 10px;
+    padding: 10px;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: darkblue;
+    border-style: solid;
+    min-height: 80px;
+    min-width: 120px;
+}
+.disciplina {
+    text-align: center;
+    font-weight: bold;
+}
+.description {
+    padding: 8px;
+    text-align: center;
+    font-size: small;
+}
+
+
+.box:hover{
+    background-color: lightblue;
+}
+
+.pre{
+    background-color: lightcoral;
+}
+.co{
+    background-color: lightgreen;
+}
