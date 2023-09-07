@@ -512,17 +512,24 @@ for (let i = 0; i< data.length; i++){
     parenteElement = document.getElementById("term" + selectedTerm)
 
     parenteElement.appendChild(box)
+    let ch = document.createElement("div")
     box.appendChild(disciplina)
     box.appendChild(description)
+    ch.className = "ch"
+    ch.id = "ch"+ data[i].Codigo
+    box.appendChild(ch)
 
 }
 
 function checkPre(){
-    console.log(this.id);
     let obj = data.find(({Codigo}) => Codigo === this.id);
     
-    console.log(obj);
-    console.log(obj.PRE1);
+    console.log(obj.PRECH);
+    if(obj.PRECH != undefined){
+        console.log("testing");
+        document.getElementById("ch"+this.id).innerText = "Pré-requisito de "+ obj.PRECH +" horas."
+    }
+
     $("#"+obj.PRE1).addClass("pre")
     $("#"+obj.PRE2).addClass("pre")
     $("#"+obj.PRE3).addClass("pre")
@@ -534,7 +541,8 @@ function clean(){
     for(let i=0; i<data.length; i++){
         $("#"+data[i].Codigo).removeClass("co")
         $("#"+data[i].Codigo).removeClass("pre")
-
+        $("#ch"+data[i].Codigo).text("")
+        
     }
 }
 
