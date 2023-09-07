@@ -62,9 +62,17 @@ header{
 .co{
     background-color: lightgreen;
 }
+.label{
+    margin-top: 5px;
+    margin-left: 5px;
+}
 
+h5{
+    text-align: right;
+}
 footer{
     display: flex;
+    justify-content: flex-start;
 }
 #lightgreen{
     margin-left: 20px;
@@ -101,9 +109,15 @@ footer{
     border-radius: 6px;
     border-color: lightblue;
 }
-@media only screen and (max-width: 700px) {
+#obs{
+    font-size: 10px;
+    font-style: italic;
+    padding: 10px;
+}
+@media only screen and (max-width: 900px) {
     #title {
-    font-size: 3vw;
+    font-size: 12px;
+    padding-top: 8px;
     }
     footer{
        display: grid;

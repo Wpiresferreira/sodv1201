@@ -508,7 +508,7 @@ for (let i = 0; i < data.length; i++) {
     disciplina.className = "disciplina"
 
     let description = document.createElement("div")
-    description.innerText = data[i].Disciplinas
+    description.innerHTML = data[i].Disciplinas + "<br> <b> CH: " + data[i].CHTotal +"h</b>"
     description.className = "description"
 
     parenteElement = document.getElementById("term" + selectedTerm)
