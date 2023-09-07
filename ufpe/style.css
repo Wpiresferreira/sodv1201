@@ -68,24 +68,28 @@ footer{
 }
 #lightgreen{
     margin-left: 20px;
+    margin-top: 5px;
     background-color: lightgreen;
     width: 20px;
     height: 20px;
 }
 #lightcoral{
     margin-left: 20px;
+    margin-top: 5px;
     background-color: lightcoral;
     width: 20px;
     height: 20px;
 }
 #lightblue{
     margin-left: 20px;
+    margin-top: 5px;
     background-color: lightblue;
     width: 20px;
     height: 20px;
 }
 #lightgray{
     margin-left: 20px;
+    margin-top: 5px;
     background-color: lightgray;
     width: 20px;
     height: 20px;
@@ -100,5 +104,9 @@ footer{
 @media only screen and (max-width: 700px) {
     #title {
     font-size: 3vw;
+    }
+    footer{
+       display: grid;
+       grid-template-columns: auto auto;
     }
     }
