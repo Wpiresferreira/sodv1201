@@ -396,7 +396,7 @@ let data = [
         OBR: "1",
         PRE1: "EP019"
     },
-    {   
+    {
         Ciclo: "Profissional",
         Codigo: "EP022",
         Disciplinas: "Estágio Obrigatório",
@@ -406,7 +406,8 @@ let data = [
         PRE1: "EP020",
         PRECH: "2940"
     },
-    {        Ciclo: "Profissional",
+    {
+        Ciclo: "Profissional",
         Codigo: "EP116",
         Disciplinas: "Metodologia de Projeto Final 1",
         Periodo: "9º período",
@@ -416,7 +417,8 @@ let data = [
         PRE2: "EP117",
         PRECH: "2940"
     },
-    {        Ciclo: "Profissional",
+    {
+        Ciclo: "Profissional",
         Codigo: "EP117",
         Disciplinas: "Metodologia de Projeto Final 2",
         Periodo: "9º período",
@@ -476,10 +478,10 @@ let data = [
 
 console.log(data);
 
-var terms = ["1º período","2º período","3º período","4º período","5º período","6º período","7º período","8º período","9º período","10º período"];
+var terms = ["1º período", "2º período", "3º período", "4º período", "5º período", "6º período", "7º período", "8º período", "9º período", "10º período"];
 
 
-for (let i = 0; i< terms.length; i++){
+for (let i = 0; i < terms.length; i++) {
 
     gradeElement = document.getElementById("grade")
 
@@ -492,23 +494,23 @@ for (let i = 0; i< terms.length; i++){
 
 }
 
-for (let i = 0; i< data.length; i++){
+for (let i = 0; i < data.length; i++) {
 
     let box = document.createElement("div")
     box.className = "box"
     box.id = data[i].Codigo
     box.addEventListener("mouseover", checkPre)
     box.addEventListener("mouseout", clean)
-    
-    selectedTerm = data[i].Periodo.substring(0, data[i].Periodo.indexOf("º"))-1
+
+    selectedTerm = data[i].Periodo.substring(0, data[i].Periodo.indexOf("º")) - 1
     let disciplina = document.createElement("div")
     disciplina.innerText = data[i].Codigo
     disciplina.className = "disciplina"
-    
+
     let description = document.createElement("div")
     description.innerText = data[i].Disciplinas
     description.className = "description"
-    
+
     parenteElement = document.getElementById("term" + selectedTerm)
 
     parenteElement.appendChild(box)
@@ -516,34 +518,49 @@ for (let i = 0; i< data.length; i++){
     box.appendChild(disciplina)
     box.appendChild(description)
     ch.className = "ch"
-    ch.id = "ch"+ data[i].Codigo
+    ch.id = "ch" + data[i].Codigo
     box.appendChild(ch)
 
 }
 
-function checkPre(){
-    let obj = data.find(({Codigo}) => Codigo === this.id);
-    
+function checkPre() {
+    let obj = data.find(({ Codigo }) => Codigo === this.id);
+
     console.log(obj.PRECH);
-    if(obj.PRECH != undefined){
+    if (obj.PRECH != undefined) {
         console.log("testing");
-        document.getElementById("ch"+this.id).innerText = "Pré-requisito de "+ obj.PRECH +" horas."
+        document.getElementById("ch" + this.id).innerText = "Pré-requisito de " + obj.PRECH + " horas."
     }
 
-    $("#"+obj.PRE1).addClass("pre")
-    $("#"+obj.PRE2).addClass("pre")
-    $("#"+obj.PRE3).addClass("pre")
-    $("#"+obj.COREQ1).addClass("co")
-    $("#"+obj.COREQ2).addClass("co")
+    $("#" + obj.PRE1).addClass("pre")
+    $("#" + obj.PRE2).addClass("pre")
+    $("#" + obj.PRE3).addClass("pre")
+    $("#" + obj.COREQ1).addClass("co")
+    $("#" + obj.COREQ2).addClass("co")
+
+    checkPos(this.id)
 }
 
-function clean(){
-    for(let i=0; i<data.length; i++){
-        $("#"+data[i].Codigo).removeClass("co")
-        $("#"+data[i].Codigo).removeClass("pre")
-        $("#ch"+data[i].Codigo).text("")
-        
+function clean() {
+    for (let i = 0; i < data.length; i++) {
+        $("#" + data[i].Codigo).removeClass("co")
+        $("#" + data[i].Codigo).removeClass("pre")
+        $("#" + data[i].Codigo).removeClass("pos")
+        $("#ch" + data[i].Codigo).text("")
+
     }
+}
+
+function checkPos(e) {
+
+    for (let i = 0; i < data.length; i++) {
+
+        if( e == data[i].PRE1 || e == data[i].PRE2 || e == data[i].PRE3 || e == data[i].COREQ1 || e == data[i].COREQ2)
+
+        $("#" + data[i].Codigo).addClass("pos")
+
+    }
+
 }
 
 console.log(terms)
